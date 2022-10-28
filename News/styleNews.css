@@ -1,0 +1,143 @@
+body {
+    font-family: tahoma;
+    font-size: 13px;
+    width: 80%;
+    margin: 0px auto;
+}
+
+#menu_top {
+    background: #00549a;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 15px;
+}
+
+#banner {
+    height: auto;
+    width: 100%;
+}
+
+#main #left {
+    width: 70%;
+    float: left;
+    min-height: auto;
+}
+
+#main #right {
+    width: 30%;
+    float: left;
+    min-height: 400px;
+}
+
+#footer {
+    background: #000;
+    width: 100%;
+    text-align: center;
+    height: 60px;
+    color: azure;
+    clear: left;
+    line-height: 60px;
+}
+
+#menu_top ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+#menu_top ul li {
+    float: left;
+    list-style: none;
+}
+
+#menu_top ul li a {
+    text-decoration: none;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    color: azure;
+    padding: 0px 30px 0px 30px;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 16px;
+}
+
+#banner .banner {
+    width: 570px;
+    height: 430px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#main #left ul li img {
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin-right: 15px;
+}
+
+#main #left ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+#main #left ul li {
+    list-style: none;
+    clear: left;
+    border-bottom: 2px solid #ccc;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#main #left ul li h3 {
+    color: #00549a;
+}
+
+#main {
+    margin-top: 10px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+#right input {
+    height: 35px;
+    width: 70%;
+}
+
+#right button {
+    height: 35px;
+    margin-left: 10px;
+    background: #00549a;
+    color: white;
+    font-style: initial;
+}
+
+#right h3 {
+    color: #00549a;
+}
+
+#right ul {
+    margin: 0px;
+    padding: 0px;
+    margin-top: 20px;
+}
+
+#right ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+#right ul li a:hover {
+    color: #00549a;
+}
+
+#right ul li {
+    margin-top: 15px;
+    margin-left: 15px;
+}
