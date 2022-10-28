@@ -1,0 +1,27 @@
+.container{
+    margin: auto;
+    width: 100%;
+    
+}
+input{
+    height: 30px;
+    width: 350px;
+    border: 2px solid blue;
+    border-radius: 5px;
+}
+.submit{
+    width: 170px;
+}
+h2{
+    color: green;
+    
+    
+}
+/* body {
+    background-image: linear-gradient(to right, red , yellow);
+
+} */
+.contar{
+    background-color: aqua;
+}
+
