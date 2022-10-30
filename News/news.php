@@ -33,32 +33,84 @@
 
     </div>
 
-    <?php
-            // include "connect.php";
-            $result = $conn -> query("SELECT * FROM post_description");
-    ?>
+   
     <div id="main">
-        <div id="left">
-            <ul>
-            <?php while($row = mysqli_fetch_assoc($result)): ?>
-                <li>
-                <img alt="" src="core/upload/thumbnail/<?php echo $news_thumb; ?>">
-                    <h3><?php echo $row['p_heading'] ?></h3>
-                </li>
-            <?php endwhile; ?>
-            </ul>
-        </div>
-        <div id="right">
-            <h3>Từ khoá: </h3>
-            <input title="text" placeholder="Nhập từ khoá..." /><button>Tìm kiếm</button>
-            <ul>
-            <?php while($row = mysqli_fetch_assoc($result)): ?>
-                <li>
-                    <a><?php echo $row['p_heading'] ?></a>
-                </li>
-            <?php endwhile; ?>
-            </ul>
-        </div>
+
+<div id="left">
+        <?php
+                
+                $select_cat_news = "SELECT * FROM post_description ORDER BY p_time DESC ";
+                $result_cat_news = mysqli_query($conn , $select_cat_news);
+
+                if($result_cat_news){
+                    while ( $cat_news_rows = mysqli_fetch_assoc($result_cat_news) ){
+                     $post_thumb = $cat_news_rows["p_thumbnail"];
+                      $post_heading = $cat_news_rows["p_heading"];
+                      $post_id = $cat_news_rows["p_id"];
+                      $post_desc = $cat_news_rows["p_description"];
+                      $post_id = $cat_news_rows["p_id"];
+             ?>
+
+                <!-- inner card row -->
+
+                      <ul style="margin: 0px;
+    padding: 0px; width: 70%; display: flex;">
+                          <li style="list-style: none;
+    clear: left;
+    border-bottom: 2px solid #ccc;
+    
+    margin-bottom: 20px">
+                          <a href="read-post.php?id=<?php echo $post_id; ?>" > <img  style="width: 200px;
+    height: 200px;
+    float: left;
+    margin-right: 15px " src="core/upload/thumbnail/<?php echo $post_thumb; ?>"> </a>
+                           <a href="read-post.php?id=<?php echo $post_id; ?>" > <h3> <?php echo ucwords($post_heading); ?> </h3> </a>
+                            <a href="read-post.php?id=<?php echo $post_id ?>" ><?php echo ucwords($post_desc); ?> </a>
+
+                          </li>
+                      </ul>
+                        
+               </div>
+
+                  <?php
+                  }
+                }
+                        
+                ?>
+                </div>
+
+                <div id="right">
+        <?php
+                
+                $select_cat_news = "SELECT * FROM post_description ORDER BY p_time DESC ";
+                $result_cat_news = mysqli_query($conn , $select_cat_news);
+
+                if($result_cat_news){
+                    while ( $cat_news_rows = mysqli_fetch_assoc($result_cat_news) ){
+                     $post_thumb = $cat_news_rows["p_thumbnail"];
+                      $post_heading = $cat_news_rows["p_heading"];
+                      $post_id = $cat_news_rows["p_id"];
+                      $post_desc = $cat_news_rows["p_description"];
+                      $post_id = $cat_news_rows["p_id"];
+             ?>
+
+                <!-- inner card row -->
+
+               <div class="row">
+                      <div class="card">
+                        
+                          <div class="card-body">
+                             <div class="card-text"> <a href="read-post.php?id=<?php echo $post_id; ?>" > <h3> <?php echo ucwords($post_heading); ?> </h3> </a> </div>
+                        </div>
+                    </div>
+               </div>
+
+                  <?php
+                  }
+                }
+                        
+                ?>
+                </div>
     </div>
     <div id="footer">Footer</div>
 </body>
