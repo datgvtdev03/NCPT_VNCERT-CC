@@ -5,12 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="../src/css/signIn_signUp.css">
-    <title>Login</title>
+    <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">	
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Sign up</title>
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="container-fluid d-flex justify-content-center" id="navbar">
+        <nav class="navbar navbar-expand-md">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Đội ngũ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Tin tức</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Tuyển dụng</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Liên hệ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Đăng nhập</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="wrapper" style="margin-top: 2%;">
         <div class="form-login">
             <h1>Đăng nhập</h1>
             <form action="#" method="POST">

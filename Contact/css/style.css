@@ -12,11 +12,12 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-  a {
-    position: relative;
+  .nav-link:hover {
+    transform: translateY(-2px);
+    transition: transform .2s ease-in-out;
   }
   
-  a::before {
+  .nav-link::before {
       content: '';
       position: absolute;
       width: 100%;
@@ -30,7 +31,7 @@
       transition: transform .2s ease-in-out;
     }
     
-  a:hover::before {
+  .nav-link:hover::before {
     transform-origin: left;
     transform: scaleX(1);
   }
@@ -40,13 +41,14 @@
  }
 
  .nav-link {
+    position: relative;
     color: rgba(255, 255, 255);
     font-weight: bold;
     font-family: "Montserrat-Bold";
 }
 
 .nav-item {
-    padding-left: 10px;
+    padding-left: 20px;
 }
 
 #navbar {
@@ -61,7 +63,8 @@ body {
   font-family: "Montserrat-Regular";
   color: #fff;
   font-size: 15px;
-  margin: 0; }
+  margin: 0;
+  overflow: hidden; }
 
 input, textarea, select, button {
   font-family: "Montserrat-Regular";
@@ -93,7 +96,7 @@ a:hover {
 
 .inner {
   max-width: 758px;
-  margin-top: 3%;
+  margin-top: 1%;
   margin-left: auto;
   margin-right: auto;
   background: #39459b;
@@ -122,6 +125,7 @@ p {
 
 textarea {
   resize: none;
+  overflow: hidden;
 }
 
 .form-group {

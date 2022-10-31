@@ -8,25 +8,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">	
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="styleNews.css">
+    
     <title>News</title>
 </head>
 
 <body>
-    <div id="menu_top">
-        <ul>
-            <li><a href="#" title="Trang chủ">Trang chủ</a></li>
-            <li><a href="#" title="Đội ngũ">Đội ngũ</a></li>
-            <li><a href="#" title="Tin tức">Tin tức</a></li>
-            <li>
-                <a href="#" title="Trang chủ"><img class="logo" src="img/logoVncert.png" alt=""></a>
-            </li>
-
-            <li><a href="#" title="Tuyển dụng">Tuyển dụng</a></li>
-            <li><a href="../Contact/contactForm.html" title="Liên hệ">Liên hệ</a></li>
-            <li><a href="core/login.php" title="Đăng nhập">Đăng nhập</a></li>
-        </ul>
+    <div class="container-fluid d-flex justify-content-center" id="navbar">
+        <nav class="navbar navbar-expand-md">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Đội ngũ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Tin tức</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Tuyển dụng</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Contact/contactForm.html">Liên hệ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.php">Đăng nhập</a>
+                </li>
+            </ul>
+        </nav>
     </div>
+
     <div id="banner">
         <img class="banner" src="img/banner1.png" alt="">
         <img class="banner" src="img/banner2.webp" alt="">
