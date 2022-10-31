@@ -34,10 +34,10 @@
                     <a class="nav-link" href="">Tuyển dụng</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Liên hệ</a>
+                    <a class="nav-link" href="../Contact/contactForm.html">Liên hệ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Đăng nhập</a>
+                    <a class="nav-link" href="login.php">Đăng nhập</a>
                 </li>
             </ul>
         </nav>

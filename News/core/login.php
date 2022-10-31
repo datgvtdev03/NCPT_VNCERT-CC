@@ -54,14 +54,21 @@
           // database connection
           require_once "include/connection.php";
 
-          $sql_query = "SELECT * FROM admin WHERE email='$email' && password = '$pass'  ";
+          $sql_query = "SELECT * FROM admin WHERE email='$email' && password = '$pass' ";
           $result = mysqli_query($conn , $sql_query);
-
           if ( mysqli_num_rows($result) > 0 ){
            while( $rows = mysqli_fetch_assoc($result) ){
             session_start();
             $_SESSION["email"] = $rows["email"];
+            $_SESSION["id"] = $rows["id"];
+
+            if ($_SESSION["id"] == 1){
+              header("Location: ../../demoVNCERT/admin/");
+              return;
+            }
             header("Location: index.php?login-sucess");
+
+            // header("Location: index.php?login-sucess");
            }
           }else{
             $login_Err = "<div class='alert alert-warning alert-dismissible fade show'>
