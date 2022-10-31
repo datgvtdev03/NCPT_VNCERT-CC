@@ -19,12 +19,6 @@ body {
     width: 100%;
 }
 
-#main #left {
-    width: 70%;
-    float: left;
-    min-height: auto;
-}
-
 #main #right {
     width: 30%;
     float: left;
