@@ -23,7 +23,7 @@
             </li>
 
             <li><a href="#" title="Tuyển dụng">Tuyển dụng</a></li>
-            <li><a href="#" title="Liên hệ">Liên hệ</a></li>
+            <li><a href="../Contact/contactForm.html" title="Liên hệ">Liên hệ</a></li>
             <li><a href="core/login.php" title="Đăng nhập">Đăng nhập</a></li>
         </ul>
     </div>
