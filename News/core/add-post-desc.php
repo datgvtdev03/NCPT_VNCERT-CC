@@ -12,7 +12,6 @@
     $category = $p_heading = $editor =  $thumbnail_name = "";
     $t = 1;
     if( $_SERVER["REQUEST_METHOD"] == "POST" ){
-        
         if( empty($_REQUEST["p_category"])){
             $category_err =  "<p style='color:red'> * Category is Required </p>";
         }else {
@@ -53,8 +52,7 @@
         }
 
         if( !empty($category) && !empty($editor) && !empty($p_heading) && !empty( $thumbnail_name ) ){
-            move_uploaded_file($thumbnail_temp_loc,$location);
-
+            move_uploaded_file($thumbnail_temp_loc, $location);
         $add_post_description = "INSERT INTO post_description( p_heading , p_description , p_thumbnail , p_category) VALUES ( '$p_heading' , '$editor' , '$new_file_name' , '$category')";
         $result_add_desc = mysqli_query($conn , $add_post_description);
 

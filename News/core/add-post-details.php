@@ -38,7 +38,7 @@
 
           if( in_array( $thumbnail_extension , $isallowded ) ){
             $new_file_name =  uniqid("",true).".".$thumbnail_extension;      
-          $location = "upload/carousel/".$new_file_name;
+          $location = "upload/" . $new_file_name;
           
           }else{
             $thumbnail_err = "<p style='color:red'> * Only JPG , JPEG and PNG files accepted </p>";
@@ -80,8 +80,7 @@
                                     echo "<script>
                                     $(document).ready( function(){
                                         $('#showModal').modal('show');
-                                        $('#linkBtn').attr('href', 'manage-post-details.php');
-                                        $('#linkBtn').text('View All Post Details');
+                                       
                                         $('#addMsg').text('Post Details Added Successfully!');
                                         $('#closeBtn').text('Add More');
                                     })
@@ -104,29 +103,9 @@
     <div id="form" class="pt-5 form-input-content">
         <div class="card login-form mb-0">
             <div class="card-body pt-3 shadow">
-                <h4 class="text-center">Add Post Details </h4>
+                <h4 class="text-center">Thêm tin tức </h4>
                 <form method="POST" enctype="multipart/form-data" action=" <?php htmlspecialchars($_SERVER['PHP_SELF']) ?>"> 
-                <div class="form-group">
-                        <label >Select Post Heading: </label>
-                        <select name="heading" class="form-control" >
-                            <option value="">Please Select a Post Heading: </option>
-                            <?php
-                            $get_heading = "SELECT * FROM post_description WHERE p_time IS NULL ";
-                            $post_heading = mysqli_query($conn , $get_heading);
-
-                            if(  mysqli_num_rows($post_heading) > 0  ){
-                                while( $rows = mysqli_fetch_assoc($post_heading) ){
-                                   $p_heading = ucwords( $rows["p_heading"] ) ;
-                                    ?>
-
-                                   <option value='<?php echo $p_heading ?>' <?php if($p_heading == $heading){ echo 'selected';} ?>  > <?php echo$p_heading ?></option> 
-                                    <?php
-                                }
-                            }
-                            ?>
-                        </select>
-                        <?php echo $heading_err; ?>
-                    </div>           
+                       
                    
                     <div class="form-group">
                         <label> Add Details: </label>
