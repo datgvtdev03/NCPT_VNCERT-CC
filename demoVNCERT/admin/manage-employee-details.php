@@ -26,14 +26,19 @@ table {
 
 <div class="container bg-white shadow mb-5">
     <div class="py-4 mt-3"> 
-    <div class='text-center pb-2'><h4>Manage Post Details</h4></div>
-    <table style="width:100%" class="table-hover text-center ">
+    <div class='text-center pb-2'><h4>Danh sách nhân viên</h4></div>
+    <table style="width:100 %" class="table-hover text-center ">
     <tr class="bg-dark">
-        <th>S.No.</th>
-        <th>Post Heading</th>
-        <th>Post Details</th>
-        <th>Post Image</th>
-        <th>Action</th>
+        <td>STT</td>
+        <td style = "width:150px">Họ tên</td>
+        <td style = "width:200px">Chức vụ</td>
+        <td style = "width:200px">Email</td>
+        <td style = "width:150px">Số điện thoại</td>
+        <td style = "width:100px">Giới tính</td>
+        <td style = "width:200px">Ngày sinh</td>
+        <td style = "width:200px">Địa chỉ</td>
+        <td style = "width:100px">Quản lý</td>
+
     </tr>
     <?php 
     
