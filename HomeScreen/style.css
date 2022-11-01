@@ -1,0 +1,153 @@
+body{
+    padding: 0;
+    margin: 0;   
+}
+.wrapper{
+    height: auto;
+    width: 90%;
+    margin: 0 auto;
+   
+}
+.header{
+    border: 1px solid 	#082f5f;
+    height: 330px;
+    width: 100%;
+    background-color: 	#082f5f;
+    margin-top: 5px;
+   
+   
+ 
+}
+.header img{
+    height: 330px;
+    width: 100%;
+   
+
+}
+.menu{
+    border: 1px solid 	#ffbf00;
+    height: 50px;
+    width: 100%;
+    background-color: #ffbf00;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+    font-weight: bold;
+
+}
+ul.list_menu a{
+    color: black;
+    text-decoration: none;
+    line-height: 50px;
+    font-size: 18px;
+    margin-left: 60px;
+    font-weight: bold;
+
+
+}
+.list_menu a:hover{
+    color: red;
+    text-decoration: underline;
+   
+}
+ul.list_menu{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin: 0 auto;
+}
+ul.list_menu li{
+    display: inline;
+}
+.main{
+
+    height: 600px;
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+
+}
+.sidebar{
+   
+    height: 700px;
+    width: 32%;
+    margin-top: 5px;
+    box-shadow: 2px 5px 7px 5px #888888;
+    border-radius: 45px;
+}
+.sidebar img{
+    margin: 0px;
+    border-radius: 45px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.sidebar h2{
+    text-align: center;
+    color: 	blue;
+}
+.sidebar p{
+    font-size: 18px;
+    line-height: 35px;
+    margin-left: 8px;
+}
+
+.sidebar2{
+ 
+    height: 700px;
+    width: 32%;
+    margin-top: 5px;
+    margin-left: 34px;
+    border-radius: 45px;
+    /* background-image: linear-gradient(white, rgb(200, 197, 198)); */
+    box-shadow: 2px 5px 7px 5px #888888;
+}
+.sidebar2 img{
+    margin: 0px;
+    border-radius: 45px;
+    margin-left: 5px;
+    margin-top: 5px;
+    
+    
+}
+.sidebar2 h2{
+    text-align: center;
+    color: 	blue;
+}
+.sidebar2 p{
+    font-size: 18px;
+    line-height: 35px;
+    margin-left: 8px;
+}
+.sidebar3{
+    /* border: 1px solid black; */
+    height: 700px;
+    width: 32%;
+    margin-top: 5px;
+    margin-left: 36px;
+    box-shadow: 2px 5px 7px 5px #888888;
+    border-radius: 45px;
+}
+.sidebar3 h2{
+    text-align: center;
+    color: 	blue;
+}
+.sidebar3 img{
+    margin: 0px;
+    border-radius: 45px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.sidebar3 p{
+    font-size: 18px;
+    line-height: 35px;
+    margin-left: 8px;
+    color: 	#082f5f;
+
+}
+.footer{
+    border: 1px solid #bfff00;
+    height: 150px;
+    width: 100%;
+    background-color: #bfff00;
+    margin-top: 150px;
+
+}
