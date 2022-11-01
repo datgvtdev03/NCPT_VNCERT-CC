@@ -115,8 +115,8 @@
                             <!-- <i class="fa fa-pencil-square-o menu-icon"></i><span class="nav-text">Post Description</span> -->
                         <!-- </a> -->
                         <!-- <ul aria-expanded="false"> -->
-                            <li><a href="./add-post-desc.php"> <i class="icon-plus menu-icon"></i>Add Post Description</a></li>
-                            <li><a href="./manage-post-desc.php"><i class="fa fa-cog menu-icon"></i>Manage Post Description</a></li>
+                            <li><a href="./add-post-desc.php"> <i class="icon-plus menu-icon"></i>Thêm tin tức</a></li>
+                            <li><a href="./manage-post-desc.php"><i class="fa fa-cog menu-icon"></i>Quản lý tin tức</a></li>
                         <!-- </ul> -->
                     </li>
 
@@ -146,18 +146,18 @@
 
                     <li>
                         <a href="./duty.php" >
-                            <i class="icon-logout menu-icon"></i><span class="nav-text">Assignment</span>
+                            <i class="icon-logout menu-icon"></i><span class="nav-text">Nhiệm vụ</span>
                         </a>
                     </li>
     
                     <li>
                         <a href="./logout.php" >
-                            <i class="icon-logout menu-icon"></i><span class="nav-text">Logout</span>
+                            <i class="icon-logout menu-icon"></i><span class="nav-text">Đăng xuất</span>
                         </a>
                     </li>
                     <li>
                         <a href="./profile.php"  >
-                            <i class="fa fa-user menu-icon"></i><span class="nav-text">Profile</span>
+                            <i class="fa fa-user menu-icon"></i><span class="nav-text">Thông tin cá nhân</span>
                         </a>
                     </li>                 
                 </ul>

@@ -1,17 +1,8 @@
 body {
     font-family: tahoma;
     font-size: 13px;
-    width: 80%;
+    width: 100%;
     margin: 0px auto;
-}
-
-#menu_top {
-    background: #00549a;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    padding: 15px;
 }
 
 #banner {
@@ -19,49 +10,10 @@ body {
     width: 100%;
 }
 
-#main #left {
-    width: 70%;
-    float: left;
-    min-height: auto;
-}
-
 #main #right {
     width: 30%;
     float: left;
     min-height: 400px;
-}
-
-#footer {
-    background: #000;
-    width: 100%;
-    text-align: center;
-    height: 60px;
-    color: azure;
-    clear: left;
-    line-height: 60px;
-}
-
-#menu_top ul {
-    margin: 0px;
-    padding: 0px;
-}
-
-#menu_top ul li {
-    float: left;
-    list-style: none;
-}
-
-#menu_top ul li a {
-    text-decoration: none;
-    display: block;
-    height: 40px;
-    line-height: 40px;
-    color: azure;
-    padding: 0px 30px 0px 30px;
-    font-style: normal;
-    font-weight: bold;
-    text-transform: capitalize;
-    font-size: 16px;
 }
 
 #banner .banner {

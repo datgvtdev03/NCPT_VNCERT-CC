@@ -59,49 +59,7 @@ table {
 
 <div class="container mb-5">
     <div class="row mt-5">
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="card shadow " >
-                <ul class="list-group list-group-flush">
-                    <!-- <li class="list-group-item text-center">Post Categories</li> -->
-                    <li class="list-group-item">Total Category: <span class="text-center"> <?php echo mysqli_num_rows($result); ?> </span> </li>
-                    <li class="list-group-item text-center"><a href="manage-category.php"><b>View All Categories</b></a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="card shadow " >
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item text-center">Category's Detail</li>
-                    <li class="list-group-item">
-                         <table style="width:100%" class="table-hover text-center ">
-                             <tr class="bg-dark">
-                                  <th>Category Name</th>
-                                  <th>No. of Posts</th>
-                             </tr>
-                             <?php 
-                                  if( mysqli_num_rows($result) > 0){
-                                    while( $rows = mysqli_fetch_assoc($result) ){
-                                         $c_name= $rows["c_name"];
-                                         $no_of_post = $rows["no_of_post"];
-                                          $c_id = $rows["c_id"];
-                               ?>
-                             <tr>
-                                 <td> <?php echo ucwords($c_name) ; ?></td>
-                                 <td><?php echo $no_of_post; ?></td>
-                                <?php 
-                                        $i++;
-                                        }
-                                    }else{
-                                        echo "no category found";
-                                    }
-                                ?>        
-                             </tr>
-                             </table>
-                    </li>
-                    
-                </ul>
-            </div>
-        </div>
+        
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="card shadow " >
                 <ul class="list-group list-group-flush">
