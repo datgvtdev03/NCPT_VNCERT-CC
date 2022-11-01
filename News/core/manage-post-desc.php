@@ -54,7 +54,7 @@ table {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 700px;
+    width: 650px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;"><?php echo $complete_post; ?></td>

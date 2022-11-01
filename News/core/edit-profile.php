@@ -90,11 +90,11 @@
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
                             <div class="card-body pt-5 shadow">                       
-                                    <h4 class="text-center">Edit Your Profile</h4>
+                                    <h4 class="text-center">Sửa thông tin cá nhân</h4>
                                 <form method="POST" action=" <?php htmlspecialchars($_SERVER['PHP_SELF']) ?>">
                             
                                 <div class="form-group">
-                                    <label >Full Name :</label>
+                                    <label >Họ và tên :</label>
                                     <input type="text" class="form-control" value="<?php echo $name; ?>"  name="name" >
                                    <?php echo $nameErr; ?>
                                 </div>
@@ -107,28 +107,28 @@
                                  </div>
 
                                 <div class="form-group form-check form-check-inline">
-                                    <label class="form-check-label" >Gender :</label>
+                                    <label class="form-check-label" >Giới tính :</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="gender" <?php if($gender == "Male" ){ echo "checked"; } ?>  value="Male"  selected>
-                                    <label class="form-check-label" >Male</label>
+                                    <label class="form-check-label" >Nam</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="gender" <?php if($gender == "Female" ){ echo "checked"; } ?>  value="Female">
-                                    <label class="form-check-label" >Female</label>
+                                    <label class="form-check-label" >Nữ</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="gender" <?php if($gender == "Other" ){ echo "checked"; } ?>  value="Other">
-                                    <label class="form-check-label" >Other</label>
+                                    <label class="form-check-label" >Khác</label>
                                 </div>
 
 
                                 <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
                                     <div class="btn-group">
-                                   <input type="submit" value="Save Changes" class="btn btn-primary w-20 " name="save_changes" >        
+                                   <input type="submit" value="Lưu thay đổi" class="btn btn-primary w-20 " name="save_changes" >        
                                     </div>
                                     <div class="input-group">
-                                         <a href="profile.php" class="btn btn-primary w-20">Close</a>
+                                         <a href="profile.php" class="btn btn-primary w-20">Thoát</a>
                                     </div>
                                 </div>
                                   </form>

@@ -72,21 +72,21 @@ require_once "include/header.php";
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
                             <div class="card-body pt-5 shadow">                       
-                                    <h4 class="text-center">Change Password</h4>
+                                    <h4 class="text-center">Đổi mật khẩu</h4>
                                     <form method="POST" action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>">
                                         <div class="form-group">
-                                            <label >Old Password : </label>
+                                            <label >Mật khẩu cũ : </label>
                                             <input type="password" name="old_pass" class="form-control">
                                             <?php echo $old_passErr; ?>
                                         </div>
                                         <div class="form-group">
-                                            <label >New Password : </label>
+                                            <label >Mật khẩu mới : </label>
                                             <input type="password" name="new_pass" class="form-control">
                                             <?php echo $new_passErr; ?>
 
                                         </div>
                                         <div class="form-group">
-                                            <label >Confirm Password : </label>
+                                            <label >Nhập lại mật khẩu mới : </label>
                                             <input type="password" name="confirm_pass" class="form-control">
                                             <?php echo $confirm_passErr; ?>
 
@@ -94,10 +94,10 @@ require_once "include/header.php";
                 
                                         <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
                                             <div class="btn-group">
-                                        <input type="submit" value="Save Changes" class="btn btn-primary w-20 " name="save_changes" >        
+                                        <input type="submit" value="Lưu thay đổi" class="btn btn-primary w-20 " name="save_changes" >        
                                             </div>
                                             <div class="input-group">
-                                                <a href="profile.php" class="btn btn-primary w-20">Close</a>
+                                                <a href="profile.php" class="btn btn-primary w-20">Thoát</a>
                                             </div>
                                         </div>
                                   </form>

@@ -73,7 +73,7 @@
                           <li style="list-style: none; clear: left; border-bottom: 2px solid #ccc; margin-bottom: 20px">
                           <a href="read-post.php?id=<?php echo $post_id; ?>" > <img  style="width: 200px; height: 200px; float: left; margin-right: 15px " src="core/upload/thumbnail/<?php echo $post_thumb; ?>"> </a>
                            <a style="text-decoration: none;" href="read-post.php?id=<?php echo $post_id; ?>" > <h3> <?php echo ucwords($post_heading); ?> </h3> </a>
-                            <a style="text-decoration: none; color: black" href="read-post.php?id=<?php echo $post_id ?>" ><?php echo ucwords($post_desc); ?> </a>
+                            <!-- <a style="text-decoration: none; color: black" href="read-post.php?id=<?php echo $post_id ?>" ><?php echo ucwords($post_desc); ?> </a> -->
 
                           </li>
                       
@@ -93,7 +93,7 @@
                 <div style="width: 30%;" id = "right">
                 <form action="" method="POST">
                 <h3>Từ khoá: </h3>
-            <input title="text" name="txtSearch" placeholder="Nhập từ khoá..." /><input style="margin-left: 15px; width: 60px; color:white; background: #00549a;" type="submit" name="search" value="Tìm kiếm">
+            <input title="text" name="txtSearch" placeholder="Nhập từ khoá..." /><input style="margin-left: 10px; width: 65px; color:white; background: #00549a;" type="submit" name="search" value="Tìm kiếm">
             </form>
 
             
@@ -103,7 +103,7 @@
                 if(isset($_POST["search"])){
                     $s = $_POST["txtSearch"];
                     if($s == ""){
-                        echo "<script>alert('Vui long nhap');</script>";
+                        echo "<script>alert('Vui long nhap du lieu');</script>";
                     } else {
                         $select_cat_news = "SELECT * FROM `post_description` WHERE p_heading LIKE '%$s%'";
                     }
@@ -130,8 +130,8 @@
                 <!-- inner card row -->
 
                 <ul style="margin: 0px; padding: 0px; width: 100%; display: flex;">
-                          <li style="clear: left; border-bottom: 2px solid #ccc; margin-bottom: 20px">
-                           <a href="read-post.php" > <?php echo ucwords($post_heading); ?>  </a>
+                          <li style="clear: left; margin-bottom: 20px">
+                           <a href="read-post.php?id=<?php echo $post_id; ?>" > <?php echo ucwords($post_heading); ?>  </a>
 
                           </li>
                       </ul>

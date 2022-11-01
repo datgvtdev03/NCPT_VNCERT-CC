@@ -60,10 +60,10 @@ require_once "include/header.php";
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
                             <div class="card-body pt-5 shadow">                       
-                                    <h4 class="text-center">Change Profile photo</h4>
+                                    <h4 class="text-center">Thay đổi anh hồ sơ</h4>
                                     <form method="POST" enctype="multipart/form-data" action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>">
                                         <div class="form-group">
-                                            <label >Select Image : </label>
+                                            <label >Chọn ảnh : </label>
                                             <input type="file" name="dp" class="form-control">
                                            
                                         </div>
@@ -71,10 +71,10 @@ require_once "include/header.php";
                 
                                         <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
                                             <div class="btn-group">
-                                        <input type="submit" value="Save Changes" class="btn btn-primary w-20 " name="save_changes" >        
+                                        <input type="submit" value="Lưu thay đổi" class="btn btn-primary w-20 " name="save_changes" >        
                                             </div>
                                             <div class="input-group">
-                                                <a href="profile.php" class="btn btn-primary w-20">Close</a>
+                                                <a href="profile.php" class="btn btn-primary w-20">Thoát</a>
                                             </div>
                                         </div>
                                   </form>
