@@ -1,7 +1,7 @@
 body {
     font-family: tahoma;
     font-size: 13px;
-    width: 100%;
+    width: 80%;
     margin: 0px auto;
 }
 
@@ -30,6 +30,10 @@ body {
     margin-right: 15px;
 }
 
+#left {
+    width: 60%;
+}
+
 #main #left ul {
     margin: 0px;
     padding: 0px;
@@ -49,6 +53,7 @@ body {
 
 #main {
     margin-top: 10px;
+    display: flex;
 }
 
 .logo {
@@ -60,6 +65,12 @@ body {
 #right input {
     height: 35px;
     width: 70%;
+}
+
+#right {
+    width: 20%;
+    float: left;
+    min-height: 400px;
 }
 
 #right button {

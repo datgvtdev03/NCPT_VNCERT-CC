@@ -6,17 +6,14 @@
 
     // database connection
     require_once "include/connection.php";
-
+    $id_user = $_SESSION["id"];
 
     $category_err = $p_heading_err = $editor_err = $thumbnail_err=  "";
     $category = $p_heading = $editor =  $thumbnail_name = "";
     $t = 1;
     if( $_SERVER["REQUEST_METHOD"] == "POST" ){
-        if( empty($_REQUEST["p_category"])){
-            $category_err =  "<p style='color:red'> * Category is Required </p>";
-        }else {
-          $category = $_REQUEST["p_category"];
-        }
+
+        
 
         if( empty( $_REQUEST["p_heading"] ) ){
             $p_heading_err = "<p style='color:red'> * Post Heading is Required </p>";
@@ -51,9 +48,10 @@
           }
         }
 
-        if( !empty($category) && !empty($editor) && !empty($p_heading) && !empty( $thumbnail_name ) ){
+        if(!empty($editor) && !empty($p_heading) && !empty( $thumbnail_name ) ){
             move_uploaded_file($thumbnail_temp_loc, $location);
-        $add_post_description = "INSERT INTO post_description( p_heading , p_description , p_thumbnail , p_category) VALUES ( '$p_heading' , '$editor' , '$new_file_name' , '$category')";
+        // $add_post_description = "INSERT INTO post_description( p_heading , p_description , p_thumbnail , p_category, id_user) VALUES ( '$p_heading' , '$editor' , '$new_file_name' , '$category' , $id_user)";
+        $add_post_description = "INSERT INTO `post_description`(`p_heading`, `p_description`, `p_thumbnail`, `p_category`, `complete_post`, `id_user`) VALUES ('$p_heading','','$new_file_name','$category','$editor',$id_user)";
         $result_add_desc = mysqli_query($conn , $add_post_description);
 
         if($result_add_desc){
@@ -61,8 +59,6 @@
             echo "<script>
             $(document).ready( function(){
                 $('#showModal').modal('show');
-                $('#linkBtn').attr('href', 'add-post-details.php');
-                $('#linkBtn').text('Add Post Details');
                 $('#addMsg').text('Post Heading Added Successfully!');
                 $('#closeBtn').text('Add More');
             })
@@ -82,42 +78,21 @@
     <div id="form" class="pt-5 form-input-content">
         <div class="card login-form mb-0">
             <div class="card-body pt-3 shadow">
-                <h4 class="text-center">Add Post Description </h4>
+                <h4 class="text-center">Thêm tin tức</h4>
                 <form method="POST" enctype="multipart/form-data" action=" <?php htmlspecialchars($_SERVER['PHP_SELF']) ?>"> 
-                <div class="form-group">
-                        <label >Select Post Category: </label>
-                        <select name="p_category" class="form-control" >
-                            <option value="">Please Select a Category: </option>
-                            <?php    
-                          
-                            $get_category = "SELECT * FROM post_category";
-                            $post_category = mysqli_query($conn , $get_category);
-
-                            if(  mysqli_num_rows($post_category) > 0  ){
-                                while( $rows = mysqli_fetch_assoc($post_category) ){
-                                    $c_name = ucwords( $rows["c_name"] ) ;
-                                    // echo " <option value='$c_name'  > $c_name </option> ";
-                                    ?>
-                                    <option value="<?php echo $c_name ?>" <?php if($c_name == $category){ echo 'selected';} ?> > <?php echo $c_name?></option>
-                                    <?php
-                                }
-                            }
-                            ?>
-                        </select>
-                        <?php echo $category_err; ?>
-                    </div>           
+                
                     <div class="form-group">
-                        <label >Post Heading:</label>
+                        <label >Tiêu đề bài đăng:</label>
                         <input type="text" class="form-control" value="<?php echo $p_heading; ?>" name="p_heading" > 
                         <?php echo $p_heading_err; ?>                
                     </div>
                     <div class="form-group">
-                        <label> Add Small Description: </label>
+                        <label> Nội dung bài đăng </label>
                         <textarea name="editor" id="editor"  ><?php echo $editor; ?></textarea>
                         <?php echo $editor_err; ?>
                     </div>
                     <div class="form-group">
-                        <label> Add Thumbnail: </label>
+                        <label> Thêm ảnh: </label>
                         <input type="file" name="thumbnail" class="form-control"  >
                         <?php echo $thumbnail_err; ?>
                     </div>

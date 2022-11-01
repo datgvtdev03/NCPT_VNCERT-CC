@@ -37,11 +37,11 @@ require_once "include/header.php";
                 <div class="card-body">
                 <h2 class="text-center mb-4"><?php echo $name; ?> </h2>
                     <p class="card-text">Email: <?php echo $_SESSION["email"] ?> </p>
-                    <p class="card-text">Gender: <?php echo $gender ?> </p>
+                    <p class="card-text">Giới tính: <?php echo $gender ?> </p>
                     <p class="text-center">
-                    <a href="edit-profile.php" class="btn btn-outline-primary">Edit Profile</a>
-                    <a href="change-pass.php" class="btn btn-outline-primary">Change Password</a>
-                    <a href="change-dp.php" class="mt-2 btn btn-outline-primary">Change profile photo</a>
+                    <a href="edit-profile.php" class="btn btn-outline-primary">Sửa thông tin cá nhân</a>
+                    <a href="change-pass.php" class="btn btn-outline-primary">Đổi mật khẩu</a>
+                    <a href="change-dp.php" class="mt-2 btn btn-outline-primary">Đổi hình ảnh</a>
                     </p>
                 </div>
             </div>

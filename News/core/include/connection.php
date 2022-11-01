@@ -3,7 +3,7 @@
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
-$dbname = "demoVncert";
+$dbname = "NCPT_VNCERT/CC";
 
 $conn = mysqli_connect($dbhost , $dbuser , $dbpass , $dbname);
 

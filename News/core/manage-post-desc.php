@@ -6,8 +6,9 @@
  
 //  database connection
 require_once "include/connection.php";
+$id_user = $_SESSION["id"];
 
-$sql = "SELECT * FROM post_description ORDER BY p_id DESC ";
+$sql = "SELECT * FROM `post_description` WHERE id_user = $id_user";
 $result = mysqli_query($conn , $sql);
 
 $i = 1;
@@ -26,14 +27,14 @@ table {
 
 <div class="container bg-white shadow mb-5">
     <div class="py-4 mt-5"> 
-    <div class='text-center pb-2'><h4>Manage Post Description</h4></div>
+    <div class='text-center pb-2'><h4>Quản lý các bài viết</h4></div>
     <table style="width:100%" class="table-hover text-center ">
     <tr class="bg-dark">
-        <th>S.No.</th>
-        <th>Post Heading</th>
-        <th>Post Description</th>
-        <th>Post Thumbnail</th>
-        <th>Action</th>
+        <th>STT</th>
+        <th>Tiêu đề bài đăng</th>
+        <th>Nội dung bài đăng</th>
+        <th>Hình ảnh</th>
+        <th>Hành động</th>
     </tr>
     <?php 
     
@@ -41,6 +42,7 @@ table {
         while( $rows = mysqli_fetch_assoc($result) ){
             $p_heading= $rows["p_heading"];
             $p_description = $rows["p_description"];
+            $complete_post = $rows["complete_post"];
             $p_thumbnail = $rows["p_thumbnail"];
             $p_id = $rows["p_id"];
             $p_cat = $rows["p_category"];
@@ -48,7 +50,14 @@ table {
         <tr>
         <td><?php echo "{$i}."; ?></td>
         <td> <?php echo ucwords($p_heading) ; ?></td>
-        <td><?php echo $p_description; ?></td>
+        <td style="
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 700px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;"><?php echo $complete_post; ?></td>
         <td> <img src="upload/thumbnail/<?php echo $p_thumbnail;?> " class="img-fluid" style="height:70px"> </td>
 
         <td>   <?php

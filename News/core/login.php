@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link href="resorce/css/style.css" rel="stylesheet">
 
-    <title>Employee Management System</title>
+    <title>Hệ thống quản lý</title>
     <style>
     body, html {
     height: 100%;
@@ -96,7 +96,7 @@
                         <div class="card login-form mb-0">
                             <div class="card-body pt-5 shadow">
                               
-                                    <h4 class="text-center">Hello, Admin</h4>
+                                    <h4 class="text-center">Xin chào bạn</h4>
                                     <div class="text-center my-5"> <?php echo $login_Err; ?> </div>
 
                                 <form method="POST" action=" <?php htmlspecialchars($_SERVER['PHP_SELF']) ?>">
@@ -108,7 +108,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label >Password :</label>
+                                        <label >Mật khẩu :</label>
                                         <input type="password" class="form-control" name="password" >
                                         <?php echo $pass_err; ?>            
 

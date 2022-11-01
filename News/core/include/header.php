@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>NewsFeed - Admin Pannel</title>
+    <title>Nhân viên</title>
     
     <link href="./resorce/css/style.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
@@ -78,11 +78,12 @@
         <div class="header">    
             <div class="header-content clearfix">
                 
-                <!-- <div class="nav-control">
+                
+            <div class="nav-control">
                     <div class="hamburger">
-                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                        <a href="../../news.php" class="toggle-icon"><i class="icon-home"></i></a>
                     </div>
-                </div> -->
+                </div>
                <div class="text-center">
                 <h2 class="pt-3"> VNCERT </h2>
                  </div>
@@ -100,53 +101,20 @@
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
                    <br> <br>       
-                    
-                    <!-- <li>
-                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="fa fa-list-alt menu-icon"></i><span class="nav-text">Post Category</span>
+                   <li>
+                        <a href="./index.php"  >
+                            <i class="icon-home menu-icon"></i><span class="nav-text">Tổng quan</span>
                         </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./add-category.php"> <i class="icon-plus menu-icon"></i>Add Category</a></li>
-                            <li><a href="./manage-category.php"><i class="fa fa-cog menu-icon"></i>Manage Category</a></li>
-                        </ul>
-                    </li> -->
-                    <li>
-                    <!-- <a class="has-arrow" href="javascript:void()" aria-expanded="false"> -->
-                            <!-- <i class="fa fa-pencil-square-o menu-icon"></i><span class="nav-text">Post Description</span> -->
-                        <!-- </a> -->
-                        <!-- <ul aria-expanded="false"> -->
+                    </li>
+                    
                             <li><a href="./add-post-desc.php"> <i class="icon-plus menu-icon"></i>Thêm tin tức</a></li>
                             <li><a href="./manage-post-desc.php"><i class="fa fa-cog menu-icon"></i>Quản lý tin tức</a></li>
-                        <!-- </ul> -->
                     </li>
 
-                    <!-- <li>
-                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="fa fa-pencil-square-o menu-icon"></i><span class="nav-text">Post</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./add-post-details.php"><i class="icon-plus menu-icon"></i>Add Post</a></li>
-                            <li><a href="./manage-post-details.php"><i class="fa fa-cog menu-icon"></i>Manage Post</a></li>
-
-                        </ul>
-                      </li> -->
-
-                     
-
-                    <!-- <li>
-                        <a href="./about-us.php" >
-                            <i class="fa fa-users menu-icon"></i><span class="nav-text">About Us</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./contact-us.php" >
-                            <i class="fa fa-address-book menu-icon"></i><span class="nav-text">Contact Us</span>
-                        </a>
-                    </li> -->
-
+                    
                     <li>
                         <a href="./duty.php" >
-                            <i class="icon-logout menu-icon"></i><span class="nav-text">Nhiệm vụ</span>
+                            <i class="icon-list menu-icon"></i><span class="nav-text">Nhiệm vụ</span>
                         </a>
                     </li>
     
