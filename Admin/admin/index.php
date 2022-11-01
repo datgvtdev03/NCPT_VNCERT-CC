@@ -10,6 +10,12 @@ require_once "include/connection.php";
 $select_total_post = "SELECT * FROM post_description WHERE p_time IS NOT NULL";
 $total_post_result  = mysqli_query($conn , $select_total_post);
 
+//dem so luong bai viet
+$select_members = "SELECT * FROM admin WHERE p_time IS NOT NULL";
+$total_member  = mysqli_query($conn , $select_members);
+
+
+
 
 // selecting category details
 // $sql = "SELECT * FROM post_category";
@@ -82,11 +88,11 @@ table {
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item text-center">Quản lý nhân viên</li>
                     <li class="list-group-item text-left">Số lượng nhân viên : <?php 
-                        if($total_post_result){
-                            echo mysqli_num_rows($total_post_result);
+                        if($total_member){
+                            echo mysqli_num_rows($total_member);
                         }
                     ?></li>
-                    <li class="list-group-item text-center"><a href="manage-post-desc.php"><b>Xem tất cả nhân viên</b></a>   </li>
+                    <li class="list-group-item text-center"><a href="manage-post-details.php"><b>Xem tất cả nhân viên</b></a>   </li>
                 </ul>
             </div>
         </div>

@@ -22,6 +22,8 @@
     $p_heading_err = $editor_err = $thumbnail_err = $thumbnail_name = "";
    
     $t = 1;
+
+    
     if( $_SERVER["REQUEST_METHOD"] == "POST" ){
 
         if( empty( $_REQUEST["p_heading"] ) ){
