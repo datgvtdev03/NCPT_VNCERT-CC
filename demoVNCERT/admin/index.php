@@ -129,7 +129,7 @@ table {
                             echo mysqli_num_rows($total_post_result);
                         }
                     ?></li>
-                    <li class="list-group-item text-center"><a href="manage-post-desc.php"><b>Xem tất cả bài viết</b></a>   </li>
+                    <li class="list-group-item text-center"><a href="manage-employee-details.php"><b>Xem tất cả bài viết</b></a>   </li>
                 </ul>
             </div>
         </div>

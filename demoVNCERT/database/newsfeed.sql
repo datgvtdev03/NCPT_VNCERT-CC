@@ -138,6 +138,7 @@ CREATE TABLE `post_description` (
   `p_time` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
 --
 -- Dumping data for table `post_description`
 --
@@ -193,9 +194,33 @@ INSERT INTO `post_description` (`p_id`, `p_heading`, `p_description`, `p_thumbna
 --
 -- Indexes for dumped tables
 --
-
+CREATE TABLE `employee_description` (
+  `e_id` int(15) NOT NULL,
+  `e_name` nvarchar(40) NOT NULL,
+  `e_position` mediumtext NOT NULL,
+  `e_email` varchar(100) NOT NULL,
+  `e_phone` int(11) DEFAULT NULL,
+  `e_gender` varchar(6) DEFAULT NULL,
+  `e_birth` datetime DEFAULT NULL,
+  `e_adress` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
+insert into `employee_description`(`e_id`, `e_name`, `e_position`, `e_email`, `e_phone`, `e_gender`, `e_birth`, `e_adress`) values
+(1, 'John Nathan', 'Nhân viên', 'johnnathan1995@gmail.com', 01234567890, 'nam', 20/12/1995, 'New York'),
+(2, 'John Nathan', 'Nhân viên', 'johnnathan1995@gmail.com', 01234567890, 'nam', 20/12/1995, 'New York'),
+(3, 'John Nathan', 'Nhân viên', 'johnnathan1995@gmail.com', 01234567890, 'nam', 20/12/1995, 'New York'),
+(4, 'John Nathan', 'Nhân viên', 'johnnathan1995@gmail.com', 01234567890, 'nam', 20/12/1995, 'New York'),
+(5, 'John Nathan', 'Nhân viên', 'johnnathan1995@gmail.com', 01234567890, 'nam', 20/12/1995, 'New York'),
+(6, 'John Nathan', 'Nhân viên', 'johnnathan1995@gmail.com', 01234567890, 'nam', 20/12/1995, 'New York'),
+(7, 'John Nathan', 'Nhân viên', 'johnnathan1995@gmail.com', 01234567890, 'nam', 20/12/1995, 'New York'),
+(8, 'John Nathan', 'Nhân viên', 'johnnathan1995@gmail.com', 01234567890, 'nam', 20/12/1995, 'New York'),
+(9, 'John Nathan', 'Nhân viên', 'johnnathan1995@gmail.com', 01234567890, 'nam', 20/12/1995, 'New York'),
+(10, 'John Nathan', 'Nhân viên', 'johnnathan1995@gmail.com', 01234567890, 'nam', 20/12/1995, 'New York'),
+(11, 'John Nathan', 'Nhân viên', 'johnnathan1995@gmail.com', 01234567890, 'nam', 20/12/1995, 'New York'),
+(12, 'John Nathan', 'Nhân viên', 'johnnathan1995@gmail.com', 01234567890, 'nam', 20/12/1995, 'New York');
 -- Indexes for table `about_us`
+ALTER TABLE `employee_description` 
+	ADD PRIMARY KEY (`e_id`);
 --
 ALTER TABLE `about_us`
   ADD PRIMARY KEY (`id`);

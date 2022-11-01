@@ -133,7 +133,7 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="./add-post-details.php"><i class="icon-plus menu-icon"></i>Thêm nhân viên</a></li>
-                            <li><a href="./manage-post-details.php"><i class="fa fa-cog menu-icon"></i>Danh sách nhân viên</a></li>
+                            <li><a href="./manage-employee-details.php"><i class="fa fa-cog menu-icon"></i>Danh sách nhân viên</a></li>
 
                         </ul>
                       </li>
