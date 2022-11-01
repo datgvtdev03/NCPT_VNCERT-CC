@@ -11,7 +11,7 @@
             Footer start
         ***********************************-->
  
-<!-- <div class="footer hide">
+ <div class="footer hide">
             <div class="copyright">
                 <p>Copyright &copy; Designed & Developed by <a href="#">Gurkirt</a> 2021</p>
             </div>
@@ -19,7 +19,7 @@
         <!--**********************************
             Footer end
         ***********************************-->
-    </div> -->
+    </div> 
     <!--**********************************
         Main wrapper end
     ***********************************-->

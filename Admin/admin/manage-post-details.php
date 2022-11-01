@@ -7,7 +7,7 @@
 //  database connection
 require_once "include/connection.php";
 
-$sql = "SELECT * FROM employee_description";
+$sql = "SELECT * FROM post_description ORDER BY p_time DESC";
 $result = mysqli_query($conn , $sql);
 
 $i = 1;
@@ -27,27 +27,27 @@ table {
 <div class="container bg-white shadow mb-5">
     <div class="py-4 mt-3"> 
     <div class='text-center pb-2'><h4>Danh sách nhân viên</h4></div>
-    <table style="width:100 %" class="table-hover text-center ">
+    <table style="width:100%" class="table-hover text-center ">
     <tr class="bg-dark">
-        <td>STT</td>
-        <td style = "width:150px">Họ tên</td>
-        <td style = "width:200px">Chức vụ</td>
-        <td style = "width:200px">Email</td>
-        <td style = "width:150px">Số điện thoại</td>
-        <td style = "width:100px">Giới tính</td>
-        <td style = "width:200px">Ngày sinh</td>
-        <td style = "width:200px">Địa chỉ</td>
-        <td style = "width:100px">Quản lý</td>
-
+        <th>STT</th>
+        <th>Họ tên</th>
+        <th>Email</th>
+        <th>SĐT</th>
+        <th>Ngày sinh</th>
+        <th>Địa chỉ</th>
+        <th>Giới tính</th>
+        <th>Chức vụ</th>
+        <th>Ảnh</th>
+        <th>Hoạt động</th>
     </tr>
     <?php 
     
     if( mysqli_num_rows($result) > 0){
         while( $rows = mysqli_fetch_assoc($result) ){
-            $p_heading= $rows["e_name"];
-            $complete_post = $rows["e_position"];
-            $p_carousel = $rows["e_name"];  
-            $id = $rows["e_id"];     
+            $p_heading= $rows["p_heading"];
+            $complete_post = $rows["complete_post"];
+            $p_carousel = $rows["p_carousel"];  
+            $id = $rows["p_id"];     
             ?>
         <tr>
         <td><?php echo "{$i}."; ?></td>
@@ -61,7 +61,7 @@ table {
                 echo $complete_post, $add_3_dots ;
             }
         ?></td>
-          <td> <img src="upload/carousel/<?php echo $p_carousel;?> " class="img-fluid" style="height:70px"> </td>
+        <td> <img src="upload/carousel/<?php echo $p_carousel;?> " class="img-fluid" style="height:70px"> </td>
 
         <td> <?php
                 $edit_icon = "<a href='edit-post-details.php?id={$id}' class='btn-sm btn-primary float-right '> <span ><i class='fa fa-edit '></i></span> </a>";
@@ -72,8 +72,6 @@ table {
     <?php 
             $i++;
             }
-        }else{
-        echo "no category found";
         }
     ?>
      </tr>
