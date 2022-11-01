@@ -99,16 +99,16 @@
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
                             <div class="card-body pt-5 shadow">                       
-                                    <h4 class="text-center pb-3">Add Contact Details</h4>
+                                    <h4 class="text-center pb-3">Thêm chi tiết liên hệ</h4>
                                 <form method="POST" action=" <?php htmlspecialchars($_SERVER['PHP_SELF']) ?>">
                             
                                 <div class="form-group">
-                                    <label >Address :</label>
+                                    <label >Địa chỉ :</label>
                                     <input type="text" class="form-control" value="<?php  echo $address; ?>"  name="address" >  
                                     <?php echo $address_err; ?>
                                 </div>
                                 <div class="form-group">
-                                    <label >Phone No. :</label>
+                                    <label >Số điện thoại :</label>
                                     <input type="text" class="form-control" value="<?php if(empty($phn_no)){ echo $phn_no_invalid;}else{echo $phn_no;}  ?>"  name="phn" > 
                                     <?php echo $phn_no_err; ?> 
                                 </div>
@@ -125,7 +125,7 @@
                                     <?php echo $fax_err; ?>
                                 </div>
 
-                                <button type="submit" class=" btn btn-primary btn-block">Add</button>
+                                <button type="submit" class=" btn btn-primary btn-block">Thêm</button>
                                   </form>
                             </div>
                         </div>

@@ -13,24 +13,16 @@
 
     if($result_get_post_details){
        while ( $post_details_row = mysqli_fetch_assoc($result_get_post_details) ){
-        $category = $post_details_row["p_category"];
         $p_heading = $post_details_row["p_heading"];
         $editor =  $post_details_row["p_description"];
        }
     }
 
 
-    $category_err = $p_heading_err = $editor_err = $thumbnail_err=  $thumbnail_name = "";
+    $p_heading_err = $editor_err = $thumbnail_err = $thumbnail_name = "";
    
     $t = 1;
     if( $_SERVER["REQUEST_METHOD"] == "POST" ){
-        
-        if( empty($_REQUEST["p_category"])){
-            $category_err =  "<p style='color:red'> * Category is Required </p>";
-            $category = "";
-        }else {
-          $category = $_REQUEST["p_category"];
-        }
 
         if( empty( $_REQUEST["p_heading"] ) ){
             $p_heading_err = "<p style='color:red'> * Post Heading is Required </p>";
@@ -49,7 +41,6 @@
         if( empty($_FILES["thumbnail"]["name"])){
            $thumbnail_err = "<p style='color:red'> * Post Thumbnail is Required </p>";
         }else{
-
          $thumbnail_name = $_FILES["thumbnail"]["name"];
            $thumbnail_temp_loc = $_FILES["thumbnail"]["tmp_name"];
 
@@ -67,10 +58,11 @@
           }
         }
 
-        if( !empty($category) && !empty($editor) && !empty($p_heading) && !empty( $thumbnail_name) ){
+        if(!empty($editor) && !empty($p_heading) && !empty( $thumbnail_name) ){
             move_uploaded_file($thumbnail_temp_loc,$location);
 
-             $update_post_description = "UPDATE post_description SET p_heading = '$p_heading' , p_description = '$editor' , p_thumbnail = '$new_file_name' , p_category = '$category' WHERE p_id = '$id' ";
+             $update_post_description = "UPDATE post_description SET p_heading = '$p_heading' , p_description = '$editor' , p_thumbnail = '$new_file_name' WHERE p_id = '$id' ";
+
               $result_update_desc = mysqli_query($conn , $update_post_description);
 
             if($result_update_desc){
@@ -78,9 +70,9 @@
                 $(document).ready( function(){
                     $('#showModal').modal('show');
                     $('#linkBtn').attr('href', 'manage-post-desc.php');
-                    $('#linkBtn').text('View All Posts');
-                    $('#addMsg').text('Post Details Edited Successfully!');
-                    $('#closeBtn').text('Edit Again');
+                    $('#linkBtn').text('Xem tất cả bài đăng');
+                    $('#addMsg').text('Chỉnh sửa bài viết thành công!');
+                    $('#closeBtn').text('Sửa lại');
                 })
              </script>
              ";
@@ -97,41 +89,23 @@
     <div id="form" class="pt-5 form-input-content">
         <div class="card login-form mb-0">
             <div class="card-body pt-3 shadow">
-                <h4 class="text-center">Edit Post Description </h4>
+                <h4 class="text-center">Chỉnh sửa bài đăng </h4>
                 <form method="POST" enctype="multipart/form-data" action=" <?php htmlspecialchars($_SERVER['PHP_SELF']) ?>"> 
                 <div class="form-group">
-                        <label >Select Post Category: </label>
-                        <select name="p_category" class="form-control" >
-                            <option value="">Please Select a Category: </option>
-                            <?php    
-                          
-                            $get_category = "SELECT * FROM post_category";
-                            $post_category = mysqli_query($conn , $get_category);
-
-                            if(  mysqli_num_rows($post_category) > 0  ){
-                                while( $rows = mysqli_fetch_assoc($post_category) ){
-                                    $c_name = ucwords( $rows["c_name"] ) ;
-                                    ?>
-                                    <option value="<?php echo $c_name ?>" <?php if($c_name == $category){ echo 'selected';} ?> > <?php echo $c_name?></option>
-                                    <?php
-                                }
-                            }
-                            ?>
-                        </select>
-                        <?php echo $category_err; ?>
+                       
                     </div>           
                     <div class="form-group">
-                        <label >Post Heading:</label>
+                        <label >Tiêu đề:</label>
                         <input type="text" class="form-control" value="<?php echo $p_heading; ?>" name="p_heading" > 
                         <?php echo $p_heading_err; ?>                
                     </div>
                     <div class="form-group">
-                        <label> Add Small Description: </label>
+                        <label> Nội dung: </label>
                         <textarea name="editor" id="editor"  ><?php echo $editor; ?></textarea>
                         <?php echo $editor_err; ?>
                     </div>
                     <div class="form-group">
-                        <label> Add Thumbnail: </label>
+                        <label> Ảnh: </label>
                         <input type="file" name="thumbnail" class="form-control"  >
                         <?php echo $thumbnail_err; ?>
                     </div>

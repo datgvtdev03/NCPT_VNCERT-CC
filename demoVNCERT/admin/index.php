@@ -6,15 +6,15 @@
 //  database connection
 require_once "include/connection.php";
 
-// total no of post
+// total no of post - để đếm số luọng bài viết(nhân viên cũng code theo như vậy)
 $select_total_post = "SELECT * FROM post_description WHERE p_time IS NOT NULL";
 $total_post_result  = mysqli_query($conn , $select_total_post);
 
 
 // selecting category details
-$sql = "SELECT * FROM post_category";
-$result = mysqli_query($conn , $sql);
-$i = 1;
+// $sql = "SELECT * FROM post_category";
+// $result = mysqli_query($conn , $sql);
+// $i = 1;
 
 
 // selecting about us
@@ -61,50 +61,6 @@ table {
 <div class="container mb-5">
     <div class="row mt-5">
 
-        <!-- <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="card shadow " >
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item text-center">Post Categories</li>
-                    <li class="list-group-item">Total Category: <span class="text-center"> <?php echo mysqli_num_rows($result); ?> </span> </li>
-                    <li class="list-group-item text-center"><a href="manage-category.php"><b>View All Categories</b></a></li>
-                </ul>
-            </div>
-        </div> -->
-        <!-- <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="card shadow " >
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item text-center">Category's Detail</li>
-                    <li class="list-group-item">
-                         <table style="width:100%" class="table-hover text-center ">
-                             <tr class="bg-dark">
-                                  <th>Category Name</th>
-                                  <th>No. of Posts</th>
-                             </tr>
-                             <?php 
-                                  if( mysqli_num_rows($result) > 0){
-                                    while( $rows = mysqli_fetch_assoc($result) ){
-                                         $c_name= $rows["c_name"];
-                                         $no_of_post = $rows["no_of_post"];
-                                          $c_id = $rows["c_id"];
-                               ?>
-                             <tr>
-                                 <td> <?php echo ucwords($c_name) ; ?></td>
-                                 <td><?php echo $no_of_post; ?></td>
-                                <?php 
-                                        $i++;
-                                        }
-                                    }else{
-                                        echo "no category found";
-                                    }
-                                ?>        
-                             </tr>
-                             </table>
-                    </li>
-                    
-                </ul>
-            </div>
-        </div> -->
-
                                     <!-- quan ly bai viết -->
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="card shadow " >
@@ -120,6 +76,7 @@ table {
             </div>
         </div>
 
+        <!-- quản lý nhân viên (chưa xử lý đc logic. chỉ hiện kên giao diện) -->
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="card shadow " >
                 <ul class="list-group list-group-flush">
@@ -129,7 +86,7 @@ table {
                             echo mysqli_num_rows($total_post_result);
                         }
                     ?></li>
-                    <li class="list-group-item text-center"><a href="manage-post-desc.php"><b>Xem tất cả bài viết</b></a>   </li>
+                    <li class="list-group-item text-center"><a href="manage-post-desc.php"><b>Xem tất cả nhân viên</b></a>   </li>
                 </ul>
             </div>
         </div>
@@ -145,12 +102,12 @@ table {
         <div class="col-lg-6 col-md-6 col-sm-12 "> 
         <div class="card shadow " >
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item text-center"> <b>Contact Details </b> </li>
-                    <li class="list-group-item"><b>  Address : </b>  <?php echo $address; ?> </li>
-                    <li class="list-group-item"><b> Phone No. :  </b>   <?php echo $phn_no; ?> </li>
+                    <li class="list-group-item text-center"> <b>Chi tiết liên hệ </b> </li>
+                    <li class="list-group-item"><b>  Địa chỉ : </b>  <?php echo $address; ?> </li>
+                    <li class="list-group-item"><b>  Số điện thoại :  </b>   <?php echo $phn_no; ?> </li>
                     <li class="list-group-item"><b>  Email : </b>   <?php echo $email; ?></li>
                     <li class="list-group-item"><b> Fax No. :   </b> <?php echo $fax_no; ?></li>
-                    <li class="list-group-item text-center"> <a href="contact-us.php"><b>Edit Contact Details</b> </a></li>
+                    <li class="list-group-item text-center"> <a href="contact-us.php"><b>Chỉnh sửa chi tiết liên hệ</b> </a></li>
                 </ul>
             </div>
         </div>
@@ -164,25 +121,7 @@ table {
            </div>
         </div>
     </div>
-    <!-- 3rd row start -->
-    <!-- <div class="row mt-5 bg-white shadow">
-        <div class="col-lg-3 col-md-9 col-sm-12 "> 
-        <div class="" >
-                <ul class="list-group list-group-flush pt-5 ">
-                <li class="list-group-item text-center" style="font-size:29px;"> <b>About Us: </b> </li>
-                <li class="list-group-item text-center"> <a class="btn btn-outline-primary" href="about-us.php"><b>Edit About Us </b> </a> </li>
-
-                </ul>
-            </div>
-        </div>
-        <div class="col-lg-9 col-md-9 col-sm-12 "> 
-           <div class=" pt-5">
-                <ul>
-                   <li> <?php echo $about_us;?> </li>
-                </ul>
-           </div>
-        </div>
-    </div> -->
+   
 </div>
 
 

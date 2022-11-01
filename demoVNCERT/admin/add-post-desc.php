@@ -8,17 +8,11 @@
     require_once "include/connection.php";
 
 
-    $category_err = $p_heading_err = $editor_err = $thumbnail_err=  "";
-    $category = $p_heading = $editor =  $thumbnail_name = "";
+    $p_heading_err = $editor_err = $thumbnail_err=  "";
+    $p_heading = $editor =  $thumbnail_name = "";
     $t = 1;
     if( $_SERVER["REQUEST_METHOD"] == "POST" ){
         
-        // if( empty($_REQUEST["p_category"])){
-        //     $category_err =  "<p style='color:red'> * Category is Required </p>";
-        // }else {
-        //   $category = $_REQUEST["p_category"];
-        // }
-
         if( empty( $_REQUEST["p_heading"] ) ){
             $p_heading_err = "<p style='color:red'> * Tiêu đề không được để trống! </p>";
         }else{
@@ -26,13 +20,13 @@
         }
 
         if( empty( $_REQUEST["editor"] ) ){
-            $editor_err = "<p style='color:red'> * Nội dung không được để trống </p>";
+            $editor_err = "<p style='color:red'> * Nội dung không được để trống! </p>";
         }else{
            $editor = $_REQUEST["editor"];
         }
 
         if( empty($_FILES["thumbnail"]["name"])){
-           $thumbnail_err = "<p style='color:red'> * Post Thumbnail is Required </p>";
+           $thumbnail_err = "<p style='color:red'> * Ảnh không được để trống! </p>";
         }else{
 
             $thumbnail_name = $_FILES["thumbnail"]["name"];
@@ -52,10 +46,10 @@
           }
         }
 
-        // if( !empty($category) && !empty($editor) && !empty($p_heading) && !empty( $thumbnail_name ) ){
-        //     move_uploaded_file($thumbnail_temp_loc,$location);
 
         // $add_post_description = "INSERT INTO post_description( p_heading , p_description , p_thumbnail , p_category) VALUES ( '$p_heading' , '$editor' , '$new_file_name' , '$category')";
+
+       
 
         if(!empty($editor) && !empty($p_heading) && !empty( $thumbnail_name ) ){
             move_uploaded_file($thumbnail_temp_loc,$location);
@@ -65,22 +59,21 @@
 
         $result_add_desc = mysqli_query($conn , $add_post_description);
 
-        // if($result_add_desc){
-        //     $category = $p_heading = $editor = "";
-        //     echo "<script>
-        //     $(document).ready( function(){
-        //         $('#showModal').modal('show');
-        //         $('#linkBtn').attr('href', 'add-post-details.php');
-        //         $('#linkBtn').text('Add Post Details');
-        //         $('#addMsg').text('Post Heading Added Successfully!');
-        //         $('#closeBtn').text('Add More');
-        //     })
-        //  </script>
-        //  ";
-        // }
 
+        if($result_add_desc){
+             $p_heading = $editor = "";
+            echo "<script>
+            $(document).ready( function(){
+                $('#showModal').modal('show');
+                $('#addMsg').text('Thêm bài viết thành công!');
+                $('#closeBtn').text('Add More');
+            })
+         </script>
+         ";
         }
 
+        }
+     
     }
 ?>
 
@@ -103,21 +96,21 @@
                         <label >Select Post Category: </label>
                         <select name="p_category" class="form-control" >
                             <option value="">Please Select a Category: </option>
-                            <?php    
+                             <?php  
                           
-                            $get_category = "SELECT * FROM post_category";
-                            $post_category = mysqli_query($conn , $get_category);
+                            // $get_category = "SELECT * FROM post_category";
+                            // $post_category = mysqli_query($conn , $get_category);
 
-                            if(  mysqli_num_rows($post_category) > 0  ){
-                                while( $rows = mysqli_fetch_assoc($post_category) ){
-                                    $c_name = ucwords( $rows["c_name"] ) ;
-                                    // echo " <option value='$c_name'  > $c_name </option> ";
-                                    ?>
-                                    <option value="<?php echo $c_name ?>" <?php if($c_name == $category){ echo 'selected';} ?> > <?php echo $c_name?></option>
-                                    <?php
-                                }
-                            }
-                            ?>
+                            // if(  mysqli_num_rows($post_category) > 0  ){
+                            //     while( $rows = mysqli_fetch_assoc($post_category) ){
+                            //         $c_name = ucwords( $rows["c_name"] ) ;
+                            //         // echo " <option value='$c_name'  > $c_name </option> ";
+                            //         ?>
+                            //         <option value="<?php echo $c_name ?>" <?php if($c_name == $category){ echo 'selected';} ?> > <?php echo $c_name?></option>
+                            //         <?php
+                            //     }
+                            // }
+                            // ?>
                         </select>
                         <?php echo $category_err; ?>
                     </div>        -->
