@@ -92,7 +92,7 @@ table {
                             echo mysqli_num_rows($total_member);
                         }
                     ?></li>
-                    <li class="list-group-item text-center"><a href="manage-post-desc.php"><b>Xem tất cả nhân viên</b></a>   </li>
+                    <li class="list-group-item text-center"><a href="manage-post-details.php"><b>Xem tất cả nhân viên</b></a>   </li>
                 </ul>
             </div>
         </div>
