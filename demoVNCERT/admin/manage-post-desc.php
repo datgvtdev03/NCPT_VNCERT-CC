@@ -53,7 +53,7 @@ table {
 
         <td>   <?php
                 $edit_icon = "<a href='edit-post-desc.php?id={$p_id}' class='btn-sm btn-primary float-right '> <span ><i class='fa fa-edit '></i></span> </a>";
-                $delete_icon = " <a href='delete-post.php?id={$p_id}&category={$p_cat}' id='bin' class='btn-sm btn-danger float-right ml-3 '> <span ><i class='fa fa-trash '></i></span> </a>";
+                $delete_icon = " <a href='delete-post.php?id={$p_id} class='btn-sm btn-danger float-right ml-3 '> <span ><i class='fa fa-trash '></i></span> </a>";
                 echo   $delete_icon . $edit_icon;
              ?> 
         </td>   
@@ -61,8 +61,6 @@ table {
     <?php 
             $i++;
             }
-        }else{
-        echo "no category found";
         }
     ?>
      </tr>

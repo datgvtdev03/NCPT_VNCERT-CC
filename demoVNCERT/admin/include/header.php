@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    if( empty($_SESSION["email"]) ){
+    if( empty($_SESSION["email"])){
         header("Location: login.php?login-first");
     }
 
@@ -56,7 +56,7 @@
 
         <!--**********************************
             Nav header start
-        <!-- ***********************************-->
+         ***********************************-->
         <div class="nav-header">
 
              <div class="brand-logo">
@@ -137,14 +137,6 @@
 
                         </ul>
                       </li>
-
-                     
-
-                    <!-- <li>
-                        <a href="./about-us.php" >
-                            <i class="fa fa-users menu-icon"></i><span class="nav-text">About Us</span>
-                        </a>
-                    </li> -->
 
                     <li>
                         <a href="./contact-us.php" >

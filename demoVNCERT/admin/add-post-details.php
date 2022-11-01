@@ -104,10 +104,10 @@
     <div id="form" class="pt-5 form-input-content">
         <div class="card login-form mb-0">
             <div class="card-body pt-3 shadow">
-                <h4 class="text-center">Add Post Details </h4>
+                <h4 class="text-center">Thêm chi tiết bài đăng </h4>
                 <form method="POST" enctype="multipart/form-data" action=" <?php htmlspecialchars($_SERVER['PHP_SELF']) ?>"> 
                 <div class="form-group">
-                        <label >Select Post Heading: </label>
+                        <!-- <label >Select Post Heading: </label>
                         <select name="heading" class="form-control" >
                             <option value="">Please Select a Post Heading: </option>
                             <?php
@@ -126,7 +126,34 @@
                             ?>
                         </select>
                         <?php echo $heading_err; ?>
-                    </div>           
+                    </div>            -->
+                    <div class="form-group">
+                        <label> Add Details: </label>
+                        <textarea name="detail" id="detail" ><?php echo $detail; ?></textarea>
+                        <?php echo $detail_err; ?>
+                    </div>
+                    <div class="form-group">
+                        <label> Add Details: </label>
+                        <textarea name="detail" id="detail" ><?php echo $detail; ?></textarea>
+                        <?php echo $detail_err; ?>
+                    </div>
+                    <div class="form-group">
+                        <label> Add Details: </label>
+                        <textarea name="detail" id="detail" ><?php echo $detail; ?></textarea>
+                        <?php echo $detail_err; ?>
+                    </div>
+                    <div class="form-group">
+                        <label> Add Details: </label>
+                        <textarea name="detail" id="detail" ><?php echo $detail; ?></textarea>
+                        <?php echo $detail_err; ?>
+                    </div>
+
+                    <div class="form-group">
+                        <label> Add Details: </label>
+                        <!-- <textarea name="detail" id="detail" ><?php echo $detail; ?></textarea> -->
+                        <input type="text" name="detail" id="detail"><?php echo $detail; ?>
+                        <?php echo $detail_err; ?>
+                    </div>
                    
                     <div class="form-group">
                         <label> Add Details: </label>

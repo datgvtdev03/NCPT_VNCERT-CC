@@ -27,6 +27,7 @@ table {
 <div class="container bg-white shadow mb-5">
     <div class="py-4 mt-3"> 
     <div class='text-center pb-2'><h4>Danh sách nhân viên</h4></div>
+<<<<<<< HEAD:demoVNCERT/admin/manage-employee-details.php
     <table style="width:100 %" class="table-hover text-center ">
     <tr class="bg-dark">
         <td>STT</td>
@@ -39,6 +40,20 @@ table {
         <td style = "width:200px">Địa chỉ</td>
         <td style = "width:100px">Quản lý</td>
 
+=======
+    <table style="width:100%" class="table-hover text-center ">
+    <tr class="bg-dark">
+        <th>STT</th>
+        <th>Họ tên</th>
+        <th>Email</th>
+        <th>SĐT</th>
+        <th>Ngày sinh</th>
+        <th>Địa chỉ</th>
+        <th>Giới tính</th>
+        <th>Chức vụ</th>
+        <th>Ảnh</th>
+        <th>Hoạt động</th>
+>>>>>>> main:demoVNCERT/admin/manage-post-details.php
     </tr>
     <?php 
     
@@ -72,8 +87,6 @@ table {
     <?php 
             $i++;
             }
-        }else{
-        echo "no category found";
         }
     ?>
      </tr>
