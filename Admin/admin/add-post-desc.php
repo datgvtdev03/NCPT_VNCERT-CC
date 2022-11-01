@@ -7,9 +7,9 @@
     // database connection
     require_once "include/connection.php";
 
-
     $p_heading_err = $editor_err = $thumbnail_err=  "";
     $p_heading = $editor =  $thumbnail_name = "";
+
     $t = 1;
     if( $_SERVER["REQUEST_METHOD"] == "POST" ){
         
@@ -36,9 +36,9 @@
           $thumbnail_extension = strtolower( end($temp_extension) );
           $isallowded = array("jpg","png","jpeg" );
 
-          if( in_array( $thumbnail_extension , $isallowded ) ){
+          if(in_array( $thumbnail_extension , $isallowded ) ){
             $new_file_name =  uniqid("",true).".".$thumbnail_extension;      
-          $location = "upload/thumbnail/".$new_file_name;  
+            $location = "upload/thumbnail/".$new_file_name;  
           
           }else {
             $thumbnail_err = "<p style='color:red'> * Only JPG , JPEG and PNG files accepted </p>";
@@ -47,26 +47,29 @@
         }
 
 
-        // $add_post_description = "INSERT INTO post_description( p_heading , p_description , p_thumbnail , p_category) VALUES ( '$p_heading' , '$editor' , '$new_file_name' , '$category')";
-
-       
-
         if(!empty($editor) && !empty($p_heading) && !empty( $thumbnail_name ) ){
             move_uploaded_file($thumbnail_temp_loc,$location);
 
-        $add_post_description = "INSERT INTO post_description( p_heading , p_description , p_thumbnail) VALUES ( '$p_heading' , '$editor' , '$new_file_name')";
+            $current_time  = strtotime("now");
+
+
+
+        $add_post_description = "INSERT INTO post_description( p_heading ,p_description,  complete_post , p_thumbnail, p_time)
+         VALUES ( '$p_heading' , '', '$editor' , '$new_file_name', '$current_time')";
 
 
         $result_add_desc = mysqli_query($conn , $add_post_description);
 
-
+        echo "<script>console.log('Debug p_heading: " . $complete_post . "' );</script>";
+ 
         if($result_add_desc){
-             $p_heading = $editor = "";
             echo "<script>
             $(document).ready( function(){
                 $('#showModal').modal('show');
-                $('#addMsg').text('Thêm bài viết thành công!');
-                $('#closeBtn').text('Add More');
+                $('#linkBtn').attr('href', 'manage-post-desc.php');
+                $('#linkBtn').text('Xem tất cả bài đăng');
+                $('#addMsg').text('Chỉnh sửa bài viết thành công!');
+                $('#closeBtn').text('Sửa lại');
             })
          </script>
          ";
@@ -89,32 +92,9 @@
                 <h4 class="text-center">Thêm bài viết </h4>  
 
                 <!-- phương thức post -->
-                <form method="POST" enctype="multipart/form-data" action=" <?php htmlspecialchars($_SERVER['PHP_SELF']) ?>"> 
+                <form method="POST" enctype="multipart/form-data" action=" <?php htmlspecialchars($_SERVER['PHP_SELF']) ?>">
 
                 <!-- form bài đăng -->
-                <!-- <div class="form-group">
-                        <label >Select Post Category: </label>
-                        <select name="p_category" class="form-control" >
-                            <option value="">Please Select a Category: </option>
-                             <?php  
-                          
-                            // $get_category = "SELECT * FROM post_category";
-                            // $post_category = mysqli_query($conn , $get_category);
-
-                            // if(  mysqli_num_rows($post_category) > 0  ){
-                            //     while( $rows = mysqli_fetch_assoc($post_category) ){
-                            //         $c_name = ucwords( $rows["c_name"] ) ;
-                            //         // echo " <option value='$c_name'  > $c_name </option> ";
-                            //         ?>
-                            //         <option value="<?php echo $c_name ?>" <?php if($c_name == $category){ echo 'selected';} ?> > <?php echo $c_name?></option>
-                            //         <?php
-                            //     }
-                            // }
-                            // ?>
-                        </select>
-                        <?php echo $category_err; ?>
-                    </div>        -->
-
 
                     <!-- tie de bai dang -->
                     <div class="form-group">
@@ -136,7 +116,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" value="Add" class="btn login-form__btn submit w-10 " name="submit_expense" >
+                        <input type="submit" value="Thêm" class="btn login-form__btn submit w-10 " name="submit_expense" >
                     </div>
 
                 </form>

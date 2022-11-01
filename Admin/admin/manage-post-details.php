@@ -7,8 +7,11 @@
 //  database connection
 require_once "include/connection.php";
 
-$sql = "SELECT * FROM post_description ORDER BY p_time DESC";
+$sql = "SELECT * FROM admin ORDER BY p_time DESC";
 $result = mysqli_query($conn , $sql);
+
+// $sql = "SELECT * FROM admin ORDER BY id DESC";
+// $result = mysqli_query($conn , $sql);
 
 $i = 1;
 
@@ -17,7 +20,7 @@ $i = 1;
 <style>
 table, th, td {
   border: 1px solid black;
-  padding: 15px;
+  padding: 10px;
 }
 table {
   border-spacing: 10px;
@@ -36,36 +39,42 @@ table {
         <th>Ngày sinh</th>
         <th>Địa chỉ</th>
         <th>Giới tính</th>
-        <th>Chức vụ</th>
-        <th>Ảnh</th>
+        <th>Nhiệm vụ</th>
+        <th>Check mision</th>
         <th>Hoạt động</th>
     </tr>
+
     <?php 
     
-    if( mysqli_num_rows($result) > 0){
-        while( $rows = mysqli_fetch_assoc($result) ){
-            $p_heading= $rows["p_heading"];
-            $complete_post = $rows["complete_post"];
-            $p_carousel = $rows["p_carousel"];  
-            $id = $rows["p_id"];     
-            ?>
+        if( mysqli_num_rows($result) > 0){
+            while( $rows = mysqli_fetch_assoc($result) ){  
+                $fullname = $rows["name"];  
+                $email = $rows["email"];
+                $phonenumber = $rows["phoneNumber"];
+                $dateOfBirth = $rows["dateOfBirth"];
+                $address = $rows["address"];
+                $gender = $rows["gender"];
+                $mission = $rows["mission"];
+                $check_mission = $rows["checkMission"];
+                $id = $rows["id"];
+    ?>
+
         <tr>
         <td><?php echo "{$i}."; ?></td>
-        <td> <?php echo ucwords($p_heading) ; ?></td>
-        <td><?php 
-            if( strlen($complete_post) < 100){
-                echo $complete_post;
-            }else{
-                $add_3_dots = "...";
-                $complete_post = substr($complete_post , 0 , 200); 
-                echo $complete_post, $add_3_dots ;
-            }
-        ?></td>
-        <td> <img src="upload/carousel/<?php echo $p_carousel;?> " class="img-fluid" style="height:70px"> </td>
+        <td><?php echo $fullname; ?></td>
+        <td><?php echo $email; ?></td>
+        <td><?php echo $phonenumber; ?></td>
+        <td><?php echo $dateOfBirth; ?></td>
+        <td><?php echo $address; ?></td>
+        <td><?php echo $gender; ?></td>
+        <td><?php echo $mission; ?></td>
+        <td><?php echo $check_mission; ?></td>
 
         <td> <?php
                 $edit_icon = "<a href='edit-post-details.php?id={$id}' class='btn-sm btn-primary float-right '> <span ><i class='fa fa-edit '></i></span> </a>";
-                echo $edit_icon;
+
+                $delete_icon = " <a href='delete-post-detail-member.php?id={$id}' class='btn-sm btn-danger float-right ml-3 '> <span ><i class='fa fa-trash '></i></span> </a>";
+                echo $edit_icon . $delete_icon;
              ?> 
         </td>   
 
