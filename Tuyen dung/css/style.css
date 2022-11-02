@@ -1387,7 +1387,7 @@ span.cate-count {
 
 /* Footer */
 .footer-wrap {
-    background: #fff;
+    background:#007bff ;
 }
 .footer {
 
@@ -1434,7 +1434,7 @@ ul.footer-list li a {
     font-size: .9rem;
 } 
 footer.copyright-wrap {
-    background: #f9f9f9;
+    background: #0558b2;
 }
 .copyright {
 
@@ -1918,7 +1918,8 @@ ul.job-add li {
 }
 
 .another-page {
-    background: #fff;
+
+    background: #007bff;
     margin-bottom: 20px;
     transition: all ease .3s;
     -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.06);
