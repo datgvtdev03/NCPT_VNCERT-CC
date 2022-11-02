@@ -66,7 +66,9 @@
               header("Location: ../Admin/admin/index.php");
               return;
             }
-            header("Location: index.php?login-sucess");
+              header("Location: index.php?login-sucess");
+
+            
 
             // header("Location: index.php?login-sucess");
            }
