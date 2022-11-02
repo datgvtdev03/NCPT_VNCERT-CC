@@ -64,7 +64,7 @@
 
             if ($_SESSION["checkMission"] == 1){
               header("Location: ../Admin/admin/index.php");
-<<<<<<< HEAD
+
             
               return; 
             } else {
@@ -74,9 +74,8 @@
 
               // <a href="../core/add-post-desc.php"></a>
   
-=======
               return;
->>>>>>> main
+
             }
 
             // header("Location: index.php?login-sucess");
