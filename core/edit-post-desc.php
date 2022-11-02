@@ -28,14 +28,14 @@
         
 
         if( empty( $_REQUEST["p_heading"] ) ){
-            $p_heading_err = "<p style='color:red'> * Post Heading is Required </p>";
+            $p_heading_err = "<p style='color:red'>* Tiêu đề Bài đăng là Bắt buộc</p>";
             $p_heading = "";
         }else{
             $p_heading = $_REQUEST["p_heading"];
         }
 
         if( empty( $_REQUEST["editor"] ) ){
-            $editor_err = "<p style='color:red'> * Post Description is Required </p>";
+            $editor_err = "<p style='color:red'> * Mô tả Đăng là Bắt buộc</p>";
             $editor = "";
         }else{
            $editor = $_REQUEST["editor"];
@@ -54,7 +54,7 @@
            $location = "upload/thumbnail/".$new_file_name;
            
            }else{
-             $thumbnail_err = "<p style='color:red'> * Only JPG , JPEG and PNG files accepted </p>";
+             $thumbnail_err = "<p style='color:red'>* Chỉ chấp nhận các tệp JPG, JPEG và PNG</p>";
              $thumbnail_name ="";
            }
         }
@@ -73,9 +73,9 @@
                     $(document).ready( function(){
                         $('#showModal').modal('show');
                         $('#linkBtn').attr('href', 'manage-post-desc.php');
-                        $('#linkBtn').text('View All Posts');
-                        $('#addMsg').text('Post Details Edited Successfully!');
-                        $('#closeBtn').text('Edit Again');
+                        $('#linkBtn').text('Xem tất cả bài viết');
+                        $('#addMsg').text('Chi tiết bài đăng đã được chỉnh sửa thành công!');
+                        $('#closeBtn').text('Chỉnh sửa lại');
                     })
                  </script>
                  ";
@@ -89,9 +89,9 @@
                     $(document).ready( function(){
                         $('#showModal').modal('show');
                         $('#linkBtn').attr('href', 'manage-post-desc.php');
-                        $('#linkBtn').text('View All Posts');
-                        $('#addMsg').text('Post Details Edited Successfully!');
-                        $('#closeBtn').text('Edit Again');
+                        $('#linkBtn').text('Xem tất cả bài viết');
+                        $('#addMsg').text('Chi tiết bài đăng đã được chỉnh sửa thành công!');
+                        $('#closeBtn').text('Chỉnh sửa lại');
                     })
                  </script>
                  ";
