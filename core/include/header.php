@@ -65,7 +65,7 @@
 
                 <div class="nav-control">
                     <div class="hamburger">
-                        <a href="../../HomeScreen/index.php" class="toggle-icon"><i class="icon-home"></i></a>
+                        <a href="./../HomeScreen/index.php" class="toggle-icon"><i class="icon-home"></i></a>
                     </div>
                 </div>
                 <div class="text-center">

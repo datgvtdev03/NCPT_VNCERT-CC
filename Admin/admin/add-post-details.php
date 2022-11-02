@@ -9,13 +9,19 @@
 
 
     //khai bao bien
-    $fullname_err = $email_err = $password_err = $phonenumber_err = $address_err = $mission_err = $gender_err = $dateOfBirth_err = $check_mission_err;
-    $fullname_txt = $email_txt = $password_txt = $phonenumber_txt = $address_txt = $mission_txt = $gender_txt = $dateOfBirth_txt = $check_mission_text;
+   $id_err = $fullname_err = $email_err = $password_err = $phonenumber_err = $address_err = $mission_err = $gender_err = $dateOfBirth_err = $check_mission_err;
+    $id = $fullname_txt = $email_txt = $password_txt = $phonenumber_txt = $address_txt = $mission_txt = $gender_txt = $dateOfBirth_txt = $check_mission_text;
     $t = 1;
 
 
 
     if( $_SERVER["REQUEST_METHOD"] == "POST" ){
+
+        if( empty($_REQUEST["id"])){
+            $id =  "<p style='color:red'> * Id không được để trống! </p>";
+        }else {
+          $id = $_REQUEST["id"];
+        }
         
         //check fullname
         if( empty($_REQUEST["fullname"])){
@@ -95,7 +101,7 @@
             if(mysqli_num_rows($r) > 0) {
                 $email_err = "<p style='color:red'> * Email đã tồn tại! </p>";
             } else {
-                $add_member = "INSERT INTO admin( name ,email,  password , gender, phoneNumber, address, mission, dateOfBirth, checkMission, p_time) VALUES ( '$fullname_txt' , '$email_txt', '$password_txt' , '$gender_txt', '$phonenumber_txt', '$address_txt', '$mission_txt' , '$dateOfBirth_txt', '$check_mission_text', '$current_time')";
+                $add_member = "INSERT INTO admin(id, name ,email,  password , gender, phoneNumber, address, mission, dateOfBirth, checkMission, p_time) VALUES ('$id' '$fullname_txt' , '$email_txt', '$password_txt' , '$gender_txt', '$phonenumber_txt', '$address_txt', '$mission_txt' , '$dateOfBirth_txt', '$check_mission_text', '$current_time')";
 
                 $result_add_member = mysqli_query($conn , $add_member);
                 
@@ -134,6 +140,12 @@
                 <h3 class="text-center">Thêm nhân viên </h3>
                 <form method="POST" enctype="multipart/form-data" action=" <?php htmlspecialchars($_SERVER['PHP_SELF']) ?>"> 
                
+                <div class="form-group">
+                        <label> ID: </label>
+                        <input type="text" name="id" id="id"><?php echo $id; ?>
+                        <?php echo $id_err; ?>
+                    </div>
+
                    <!-- ho ten -->
                     <div class="form-group">
                         <label> Họ tên: </label>

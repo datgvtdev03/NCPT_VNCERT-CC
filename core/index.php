@@ -6,9 +6,10 @@
 //  database connection
 require_once "include/connection.php";
 $id_user = $_SESSION["id"];
-
 // total no of post
 $select_total_post = "SELECT * FROM `post_description` WHERE id_user = $id_user";
+
+// $select_total_post = "SELECT * FROM `post_description` WHERE id_user = $id_user";
 // $select_total_post = "SELECT * FROM `post_description` WHERE p_time IS NOT NULL";
 $total_post_result  = mysqli_query($conn , $select_total_post);
 
