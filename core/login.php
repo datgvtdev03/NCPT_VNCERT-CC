@@ -38,13 +38,13 @@
       if( $_SERVER["REQUEST_METHOD"] == "POST" ){
          
         if( empty($_REQUEST["email"]) ){
-         $email_err = " <p style='color:red'> * Email Can Not Be Empty</p> ";
+         $email_err = " <p style='color:red'> * Email không được trống</p> ";
         }else {
          $email = $_REQUEST["email"];
         }
 
         if ( empty($_REQUEST["password"]) ){
-         $pass_err =  " <p style='color:red'> * Password Can Not Be Empty</p> ";
+         $pass_err =  " <p style='color:red'> * Mật khẩu không được để trống</p> ";
         }else {
           $pass = $_REQUEST["password"];
         }
@@ -60,10 +60,10 @@
            while( $rows = mysqli_fetch_assoc($result) ){
             session_start();
             $_SESSION["email"] = $rows["email"];
-            $_SESSION["id"] = $rows["id"];
+            $_SESSION["checkMission"] = $rows["checkMission"];
 
-            if ($_SESSION["id"] == 1){
-              header("Location: ../../Admin/admin/index.php");
+            if ($_SESSION["checkMission"] == 1){
+              header("Location: ../Admin/admin/index.php");
               return;
             }
             header("Location: index.php?login-sucess");

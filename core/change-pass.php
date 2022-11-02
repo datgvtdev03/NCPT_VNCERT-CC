@@ -9,19 +9,19 @@ require_once "include/header.php";
     if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         if(empty($_REQUEST["old_pass"])){
-            $old_passErr = " <p style='color:red'>* Old Password Is required </p>";
+            $old_passErr = " <p style='color:red'>* Mật khẩu cũ là bắt buộc</p>";
         }else{
             $old_pass = trim($_REQUEST["old_pass"]);
         }
         
         if(empty($_REQUEST["new_pass"])){
-            $new_passErr = " <p style='color:red'>* New Password Is required </p>";
+            $new_passErr = " <p style='color:red'>* Mật khẩu mới là bắt buộc </p>";
         }else{
             $new_pass = trim($_REQUEST["new_pass"]);
         }
 
         if(empty($_REQUEST["confirm_pass"])){
-            $confirm_passErr = " <p style='color:red'>* Please Confirm new Password! </p>";
+            $confirm_passErr = " <p style='color:red'>* Vui lòng xác nhận mật khẩu mới!</p>";
         }else{
             $confirm_pass = trim($_REQUEST["confirm_pass"]);
         }
@@ -42,9 +42,9 @@ require_once "include/header.php";
                         session_destroy();
                         echo "<script>
                         $(document).ready(function() {
-                            $('#addMsg').text( 'Password Updated successfully! Log in With New Password');
+                            $('#addMsg').text( 'Đã cập nhật mật khẩu thành công! Đăng nhập bằng mật khẩu mới');
                             $('#linkBtn').attr('href','login.php');
-                            $('#linkBtn').text('OK, Understood');
+                            $('#linkBtn').text('OK, Hiểu');
                             $('#modalHead').hide();
                             $('#closeBtn').hide();
                             $('#showModal').modal('show');
@@ -53,11 +53,11 @@ require_once "include/header.php";
                     }
                     
                 }else{
-                    $confirm_passErr = "<p style='color:red'>* Confirm did not matched new Password! </p>";
+                    $confirm_passErr = "<p style='color:red'>* Xác nhận không khớp với Mật khẩu mới! </p>";
                 }
 
             }else{
-               $old_passErr = " <p style='color:red'>*Sorry! Old Password is Wrong </p> ";
+               $old_passErr = " <p style='color:red'>*Xin lỗi! Mật khẩu cũ là sai </p> ";
             }
         }
     }

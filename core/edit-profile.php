@@ -35,14 +35,14 @@
             }
 
             if( empty($_REQUEST["name"]) ){
-                $nameErr = "<p style='color:red'> * Name is required</p>";
+                $nameErr = "<p style='color:red'> * Tên là bắt buộc</p>";
                 $name = "";
             }else {
                 $name = $_REQUEST["name"];
             }
 
             if( empty($_REQUEST["email"]) ){
-                $emailErr = "<p style='color:red'> * Email is required</p> ";
+                $emailErr = "<p style='color:red'> * Email thì cần thiết</p> ";
                 $email = "";
             }else{
                 $email = $_REQUEST["email"];
@@ -55,7 +55,7 @@
                 $r = mysqli_query($conn , $sql_select_query);
 
                 if( mysqli_num_rows($r) > 0 ){
-                    $emailErr = "<p style='color:red'> * Email Already Register</p>";
+                    $emailErr = "<p style='color:red'> * Email đã đăng ký</p>";
                 } else{
 
                     $sql = "UPDATE admin SET name = '$name', email = '$email', gender= '$gender' WHERE email='$_SESSION[email]' ";
@@ -67,8 +67,8 @@
                                 $('#showModal').modal('show');
                                 $('#modalHead').hide();
                                 $('#linkBtn').attr('href', 'profile.php');
-                                $('#linkBtn').text('View Profile');
-                                $('#addMsg').text('Profile Edited Successfully!!');
+                                $('#linkBtn').text('Xem lí lịch');
+                                $('#addMsg').text('Hồ sơ đã được chỉnh sửa thành công !!');
                                 $('#closeBtn').hide();
                             })
                         </script>
