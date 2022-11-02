@@ -272,7 +272,9 @@ button {
 footer {
   color: grey; 
   font-family: 'Signika', sans-serif;
-  background-color: #251A3D; }
+  background-position: center;
+  background-size: cover;
+  background-image: url(../images/10016610_27270.jpg);}
 
 footer h6 {
   font-family: 'Playfair Display', serif;

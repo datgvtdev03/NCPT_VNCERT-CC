@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <script language="JavaScript" src="scripts/gen_validatorv31.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -42,30 +43,30 @@
     <!--Form-->
     <div class="wrapper">
         <div class="inner">
-            <form action="">
+            <form action="contactFormHandler.php" method="post" name="contact_form">
                 <h4>Liên hệ chúng tôi</h4>
                 <p>Điền vào mẫu dưới đây hoặc liên hệ trực tiếp với chúng tôi qua thông tin liên hệ</p>
-                <label class="form-group">
-                    <input type="text" class="form-control"  required>
-                    <span>Họ và tên</span>
+                <label class="form-group" for="name">
+                    <input name="name" type="text" class="form-control"  required>
+                    <span>Họ và tên*</span>
                     <span class="border"></span>
                 </label>
-                <label class="form-group">
-                    <input type="text" class="form-control"  required>
-                    <span>Số điện thoại</span>
+                <label class="form-group" for="phone">
+                    <input name="phone" type="text" class="form-control"  required>
+                    <span>Số điện thoại*</span>
                     <span class="border"></span>
                 </label>
-                <label class="form-group">
-                    <input type="text" class="form-control"  required>
-                    <span for="">Email</span>
+                <label class="form-group" for="email">
+                    <input name="email" type="text" class="form-control"  required>
+                    <span>Email*</span>
                     <span class="border"></span>
                 </label>
-                <label class="form-group">
-                    <textarea name="" id="" class="form-control" required></textarea>
-                    <span for="">Nội dung</span>
+                <label class="form-group" for="message">
+                    <textarea name="message" id="" class="form-control" required></textarea>
+                    <span>Nội dung*</span>
                     <span class="border"></span>
                 </label>
-                <button>Gửi 
+                <button type="submit">Gửi 
                     <i class="zmdi zmdi-arrow-right"></i>
                 </button>
             </form>
@@ -110,34 +111,15 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script language="JavaScript">
+        var frmvalidator  = new Validator("contact_form");
+        frmvalidator.addValidation("name","req","Please provide your name"); 
+        frmvalidator.addValidation("phone","req","Please provide your phone number");
+        frmvalidator.addValidation("email","req","Please provide your email"); 
+        frmvalidator.addValidation("message","req","Please enter your message"); 
+        frmvalidator.addValidation("email","email","Please enter a valid email address"); 
+    </script>
 </body>
 
 </html>
