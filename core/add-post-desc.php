@@ -6,36 +6,23 @@
 
     // database connection
     require_once "include/connection.php";
+    $id_user = $_SESSION["id"];
 
-    $id = $_GET["id"];
-    $get_post_details = "SELECT * FROM post_description WHERE p_id ='$id' ";
-    $result_get_post_details = mysqli_query($conn, $get_post_details);
-
-    if($result_get_post_details){
-       while ( $post_details_row = mysqli_fetch_assoc($result_get_post_details) ){
-        $p_heading = $post_details_row["p_heading"];
-        $editor =  $post_details_row["complete_post"];
-       }
-    }
-
-
-    $p_heading_err = $editor_err = $thumbnail_err = $thumbnail_name = "";
-   
+    $category_err = $p_heading_err = $editor_err = $thumbnail_err=  "";
+    $category = $p_heading = $editor =  $thumbnail_name = "";
     $t = 1;
-
-    
     if( $_SERVER["REQUEST_METHOD"] == "POST" ){
+
+        
 
         if( empty( $_REQUEST["p_heading"] ) ){
             $p_heading_err = "<p style='color:red'> * Post Heading is Required </p>";
-            $p_heading = "";
         }else{
             $p_heading = $_REQUEST["p_heading"];
         }
 
         if( empty( $_REQUEST["editor"] ) ){
             $editor_err = "<p style='color:red'> * Post Description is Required </p>";
-            $editor = "";
         }else{
            $editor = $_REQUEST["editor"];
         }
@@ -43,7 +30,8 @@
         if( empty($_FILES["thumbnail"]["name"])){
            $thumbnail_err = "<p style='color:red'> * Post Thumbnail is Required </p>";
         }else{
-         $thumbnail_name = $_FILES["thumbnail"]["name"];
+
+            $thumbnail_name = $_FILES["thumbnail"]["name"];
            $thumbnail_temp_loc = $_FILES["thumbnail"]["tmp_name"];
 
            $temp_extension = explode(".",$thumbnail_name);
@@ -52,33 +40,33 @@
 
           if( in_array( $thumbnail_extension , $isallowded ) ){
             $new_file_name =  uniqid("",true).".".$thumbnail_extension;      
-          $location = "upload/thumbnail/".$new_file_name;
+          $location = "../../upload/thumbnail/".$new_file_name;  
           
-          }else{
+          }else {
             $thumbnail_err = "<p style='color:red'> * Only JPG , JPEG and PNG files accepted </p>";
             $thumbnail_name ="";
           }
         }
 
-        if(!empty($editor) && !empty($p_heading) && !empty( $thumbnail_name) ){
-            move_uploaded_file($thumbnail_temp_loc,$location);
+        if(!empty($editor) && !empty($p_heading) && !empty( $thumbnail_name ) ){
+            move_uploaded_file($thumbnail_temp_loc, $location);
+            $current_time  = strtotime("now");
+        // $add_post_description = "INSERT INTO post_description( p_heading , p_description , p_thumbnail , p_category, id_user) VALUES ( '$p_heading' , '$editor' , '$new_file_name' , '$category' , $id_user)";
+        $add_post_description = "INSERT INTO `post_description`(`p_heading`, `p_description`, `p_thumbnail`, `p_category`, `complete_post`, `p_time`, `id_user`) VALUES ('$p_heading','','$new_file_name','$category','$editor', '$current_time', $id_user)";
+        $result_add_desc = mysqli_query($conn , $add_post_description);
 
-             $update_post_description = "UPDATE post_description SET p_heading = '$p_heading' , complete_post = '$editor' , p_thumbnail = '$new_file_name' WHERE p_id = '$id' ";
+        if($result_add_desc){
+            $category = $p_heading = $editor = "";
+            echo "<script>
+            $(document).ready( function(){
+                $('#showModal').modal('show');
+                $('#addMsg').text('Post Heading Added Successfully!');
+                $('#closeBtn').text('Add More');
+            })
+         </script>
+         ";
+        }
 
-              $result_update_desc = mysqli_query($conn , $update_post_description);
-
-            if($result_update_desc){
-                echo "<script>
-                $(document).ready( function(){
-                    $('#showModal').modal('show');
-                    $('#linkBtn').attr('href', 'manage-post-desc.php');
-                    $('#linkBtn').text('Xem tất cả bài đăng');
-                    $('#addMsg').text('Chỉnh sửa bài viết thành công!');
-                    $('#closeBtn').text('Sửa lại');
-                })
-             </script>
-             ";
-            }
         }
 
     }
@@ -91,23 +79,21 @@
     <div id="form" class="pt-5 form-input-content">
         <div class="card login-form mb-0">
             <div class="card-body pt-3 shadow">
-                <h4 class="text-center">Chỉnh sửa bài đăng </h4>
+                <h4 class="text-center">Thêm tin tức</h4>
                 <form method="POST" enctype="multipart/form-data" action=" <?php htmlspecialchars($_SERVER['PHP_SELF']) ?>"> 
-                <div class="form-group">
-                       
-                    </div>           
+                
                     <div class="form-group">
-                        <label >Tiêu đề:</label>
+                        <label >Tiêu đề bài đăng:</label>
                         <input type="text" class="form-control" value="<?php echo $p_heading; ?>" name="p_heading" > 
                         <?php echo $p_heading_err; ?>                
                     </div>
                     <div class="form-group">
-                        <label> Nội dung: </label>
+                        <label> Nội dung bài đăng </label>
                         <textarea name="editor" id="editor"  ><?php echo $editor; ?></textarea>
                         <?php echo $editor_err; ?>
                     </div>
                     <div class="form-group">
-                        <label> Ảnh: </label>
+                        <label> Thêm ảnh: </label>
                         <input type="file" name="thumbnail" class="form-control"  >
                         <?php echo $thumbnail_err; ?>
                     </div>

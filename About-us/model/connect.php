@@ -2,7 +2,7 @@
 <?php
     function connect($query) {
         try {
-            $host = "mysql:host=localhost;dbname=newfeed;charset=utf8";
+            $host = "mysql:host=localhost;dbname=NCPT_VNCERT/CC;charset=utf8";
             $dbname = "root";
             $password = "";
             $connection = new PDO($host, $dbname, $password);
