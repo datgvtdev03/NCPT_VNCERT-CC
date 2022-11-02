@@ -15,14 +15,6 @@ $select_members = "SELECT * FROM admin WHERE p_time IS NOT NULL";
 $total_member  = mysqli_query($conn , $select_members);
 
 
-
-
-// selecting category details
-// $sql = "SELECT * FROM post_category";
-// $result = mysqli_query($conn , $sql);
-// $i = 1;
-
-
 // selecting about us
 $about_us = "";
 $get_about = "SELECT * FROM about_us ORDER BY id DESC LIMIT 1";

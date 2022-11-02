@@ -40,7 +40,7 @@ table {
         <th>Địa chỉ</th>
         <th>Giới tính</th>
         <th>Nhiệm vụ</th>
-        <th>Check mision</th>
+        <th>Check position</th>
         <th>Hoạt động</th>
     </tr>
 
