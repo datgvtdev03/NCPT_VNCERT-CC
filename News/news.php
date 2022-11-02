@@ -25,7 +25,7 @@
                     <a class="nav-link" href="../HomeScreen/index.php">Trang chủ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Đội ngũ</a>
+                    <a class="nav-link" href="../About-us/view/client/About-us.php">Đội ngũ</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Tin tức</a>
@@ -72,7 +72,7 @@
                 <li style="list-style: none; clear: left; border-bottom: 2px solid #ccc; margin-bottom: 20px">
                     <a href="read-post.php?id=<?php echo $post_id; ?>"> <img
                             style="width: 200px; height: 200px; float: left; margin-right: 15px "
-                            src="core/upload/thumbnail/<?php echo $post_thumb; ?>"> </a>
+                            src="../core/upload/thumbnail/<?php echo $post_thumb; ?>"> </a>
                     <a style="text-decoration: none;" href="read-post.php?id=<?php echo $post_id; ?>">
                         <h3> <?php echo ucwords($post_heading); ?> </h3>
                     </a>

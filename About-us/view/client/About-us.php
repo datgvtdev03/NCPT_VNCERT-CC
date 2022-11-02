@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="../../src/css/about-us.css">
     <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">	
     <link rel="stylesheet" href="../../src/css/bootstrap.css">
+    <link rel="stylesheet" href="../../src/css/style.css">
+
     <script src="https://kit.fontawesome.com/59b2ca7e7f.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../../src/css/slick.css">

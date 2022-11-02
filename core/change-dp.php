@@ -26,10 +26,10 @@ require_once "include/header.php";
                     echo "<script>
                     $(document).ready( function(){
                         $('#showModal').modal('show');
-                        $('#addMsg').text('Profile Photo Update Succefully!!');
+                        $('#addMsg').text('Đã cập nhật ảnh hồ sơ thành công !!');
                         $('#linkBtn').attr('href', 'profile.php');
-                        $('#linkBtn').text('Check Profile');
-                        $('#closeBtn').text('Upload Again');
+                        $('#linkBtn').text('Kiểm tra hồ sơ');
+                        $('#closeBtn').text('Tải lên lại');
                     })
                 </script>
                 ";
@@ -39,10 +39,10 @@ require_once "include/header.php";
         } else{ echo "<script>
             $(document).ready( function(){
                 $('#showModal').modal('show');
-                $('#addMsg').text('Only JPG, PNG and JPEG files allowed!!');
+                $('#addMsg').text('Chỉ cho phép các tệp JPG, PNG và JPEG !!');
                 $('#linkBtn').attr('href', 'profile.php');
                 $('#linkBtn').hide();
-                $('#closeBtn').text('Ok, Understood');
+                $('#closeBtn').text('Ok, đã hiểu');
             })
         </script>
         ";

@@ -25,7 +25,7 @@
         
         // validate address
         if(empty($_REQUEST["address"])){
-            $address_err =  "<p style='color:red'> * Address is Required </p>";
+            $address_err =  "<p style='color:red'> * Địa chỉ là bắt buộc </p>";
             $address = "";
         }else{
             $address = $_REQUEST["address"];
@@ -33,10 +33,10 @@
 
         // validate phone number
         if( empty($_REQUEST["phn"]) ){
-            $phn_no_err = "<p style='color:red'> * Phone Number is Required </p>";
+            $phn_no_err = "<p style='color:red'> * Số điện thoại là bắt buộc </p>";
             $phn_no = "";
         }elseif(preg_match('/[a-zA-Z]/', $_REQUEST["phn"] ) ){ 
-            $phn_no_err = "<p style='color:red'> * Only Numbers Allowed</p>";
+            $phn_no_err = "<p style='color:red'> * Chỉ số được phép</p>";
             $phn_no_invalid = $_REQUEST["phn"];
             $phn_no = "";
         }else{
@@ -45,10 +45,10 @@
 
         // validate email
         if( empty($_REQUEST["email"])){
-            $email_err = "<p style='color:red'> * Email is Required </p>";
+            $email_err = "<p style='color:red'>* Email thì cần thiết</p>";
             $email = "";
         }elseif( !preg_match('/[@]/' , $_REQUEST["email"]) ){
-            $email_err = "<p style='color:red'> * Email is Invalid </p>";
+            $email_err = "<p style='color:red'> * Email không hợp lệ </p>";
             $email_invalid = $_REQUEST["email"];
             $email = "";
         }else {
@@ -57,10 +57,10 @@
 
         // validate fax    
         if( empty($_REQUEST["fax"]) ){
-            $fax_err = "<p style='color:red'> * Fax Number is Required </p>";
+            $fax_err = "<p style='color:red'> * Số fax là bắt buộc</p>";
             $fax = "";
         }elseif(preg_match('/[a-zA-Z]/', $_REQUEST["fax"] ) ){ 
-            $fax_err = "<p style='color:red'> * Only Numbers Allowed</p>";
+            $fax_err = "<p style='color:red'> * Chỉ số được phép</p>";
             $fax_invalid = $_REQUEST["fax"];
             $fax = "";
         }else{
@@ -82,7 +82,7 @@
                 $(document).ready( function(){
                     $('#showModal').modal('show');
                     $('#linkBtn').hide();
-                    $('#addMsg').text('Contact Details Updated Successfully!');
+                    $('#addMsg').text('Chi tiết liên hệ được cập nhật thành công!');
                     $('#closeBtn').text('OK');
                 })
              </script>

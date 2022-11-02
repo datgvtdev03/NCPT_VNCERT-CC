@@ -108,9 +108,9 @@
                 $(document).ready( function(){
                     $('#showModal').modal('show');
                     $('#linkBtn').attr('href', 'manage-post-details.php');
-                    $('#linkBtn').text('View All Post Details');
-                    $('#addMsg').text('Post Details Edited Successfully!');
-                    $('#closeBtn').text('Edit Again');
+                    $('#linkBtn').text('Xem tất cả chi tiết bài đăng');
+                    $('#addMsg').text('Chi tiết bài đăng đã được chỉnh sửa thành công!');
+                    $('#closeBtn').text('Chỉnh sửa lại');
                 })
             </script>
             ";

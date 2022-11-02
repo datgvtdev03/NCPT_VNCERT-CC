@@ -21,7 +21,7 @@
     if($_SERVER["REQUEST_METHOD"] == "POST"){
        
         if( empty($_REQUEST["about"]) ){
-            $about_err = "<p style='color:red'>* About can not be empty</p>";
+            $about_err = "<p style='color:red'>* Giới thiệu không được để trống</p>";
             $about = "";
         }else{
             $about = $_REQUEST["about"];
@@ -34,7 +34,7 @@
                 $(document).ready( function(){
                     $('#showModal').modal('show');
                     $('#linkBtn').hide();
-                    $('#addMsg').text('About Us Section Updated Successfully!');
+                    $('#addMsg').text('Phần Giới thiệu Chúng tôi đã Cập nhật Thành công!');
                     $('#closeBtn').text('OK');
                 })
              </script>

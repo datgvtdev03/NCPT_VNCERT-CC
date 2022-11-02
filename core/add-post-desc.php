@@ -43,7 +43,7 @@
           $location = "../../upload/thumbnail/".$new_file_name;  
           
           }else {
-            $thumbnail_err = "<p style='color:red'> * Only JPG , JPEG and PNG files accepted </p>";
+            $thumbnail_err = "<p style='color:red'> * Chỉ chấp nhận các tệp JPG, JPEG và PNG </p>";
             $thumbnail_name ="";
           }
         }
@@ -60,8 +60,8 @@
             echo "<script>
             $(document).ready( function(){
                 $('#showModal').modal('show');
-                $('#addMsg').text('Post Heading Added Successfully!');
-                $('#closeBtn').text('Add More');
+                $('#addMsg').text('Đã thêm tiêu đề bài đăng thành công!');
+                $('#closeBtn').text('Thêm bài viết');
             })
          </script>
          ";

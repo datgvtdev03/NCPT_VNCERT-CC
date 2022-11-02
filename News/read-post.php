@@ -25,7 +25,7 @@
                     <a class="nav-link" href="../HomeScreen/index.php">Trang chủ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Đội ngũ</a>
+                    <a class="nav-link" href="../About-us/view/client/About-us.php">Đội ngũ</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="news.php">Tin tức</a>
