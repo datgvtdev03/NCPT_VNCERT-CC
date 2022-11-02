@@ -8,6 +8,7 @@ body {
 #banner {
     height: auto;
     width: 100%;
+    display: flex;
 }
 
 #main #right {
@@ -17,7 +18,7 @@ body {
 }
 
 #banner .banner {
-    width: 570px;
+    width: 640px;
     height: 430px;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -96,11 +97,15 @@ body {
     color: #000;
 }
 
-#right ul li a:hover {
+#right form ul li a:hover {
     color: #00549a;
 }
 
 #right ul li {
     margin-top: 15px;
     margin-left: 15px;
+}
+
+.listNews:hover {
+    color: #00549a;
 }

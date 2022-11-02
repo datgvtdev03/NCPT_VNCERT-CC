@@ -63,7 +63,7 @@
             $_SESSION["id"] = $rows["id"];
 
             if ($_SESSION["id"] == 1){
-              header("Location: ../../demoVNCERT/admin/");
+              header("Location: ../../Admin/admin/index.php");
               return;
             }
             header("Location: index.php?login-sucess");

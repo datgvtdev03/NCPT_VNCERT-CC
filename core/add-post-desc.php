@@ -40,7 +40,7 @@
 
           if( in_array( $thumbnail_extension , $isallowded ) ){
             $new_file_name =  uniqid("",true).".".$thumbnail_extension;      
-          $location = "upload/thumbnail/".$new_file_name;  
+          $location = "../../upload/thumbnail/".$new_file_name;  
           
           }else {
             $thumbnail_err = "<p style='color:red'> * Only JPG , JPEG and PNG files accepted </p>";
@@ -50,8 +50,9 @@
 
         if(!empty($editor) && !empty($p_heading) && !empty( $thumbnail_name ) ){
             move_uploaded_file($thumbnail_temp_loc, $location);
+            $current_time  = strtotime("now");
         // $add_post_description = "INSERT INTO post_description( p_heading , p_description , p_thumbnail , p_category, id_user) VALUES ( '$p_heading' , '$editor' , '$new_file_name' , '$category' , $id_user)";
-        $add_post_description = "INSERT INTO `post_description`(`p_heading`, `p_description`, `p_thumbnail`, `p_category`, `complete_post`, `id_user`) VALUES ('$p_heading','','$new_file_name','$category','$editor',$id_user)";
+        $add_post_description = "INSERT INTO `post_description`(`p_heading`, `p_description`, `p_thumbnail`, `p_category`, `complete_post`, `p_time`, `id_user`) VALUES ('$p_heading','','$new_file_name','$category','$editor', '$current_time', $id_user)";
         $result_add_desc = mysqli_query($conn , $add_post_description);
 
         if($result_add_desc){

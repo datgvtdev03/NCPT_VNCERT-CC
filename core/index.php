@@ -99,25 +99,7 @@ table {
            </div>
         </div>
     </div>
-    <!-- 3rd row start -->
-    <!-- <div class="row mt-5 bg-white shadow"> -->
-        <!-- <div class="col-lg-3 col-md-9 col-sm-12 "> 
-        <div class="" >
-                <ul class="list-group list-group-flush pt-5 ">
-                <li class="list-group-item text-center" style="font-size:29px;"> <b>About Us: </b> </li>
-                <li class="list-group-item text-center"> <a class="btn btn-outline-primary" href="about-us.php"><b>Edit About Us </b> </a> </li>
-
-                </ul>
-            </div>
-        </div> -->
-        <!-- <div class="col-lg-9 col-md-9 col-sm-12 "> 
-           <div class=" pt-5">
-                <ul>
-                   <li> <?php echo $about_us;?> </li>
-                </ul>
-           </div>
-        </div> -->
-    <!-- </div> -->
+    
 </div>
 
 

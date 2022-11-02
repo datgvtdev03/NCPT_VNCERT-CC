@@ -62,7 +62,9 @@
         if(!empty($editor) && !empty($p_heading) ){
             if(!empty( $thumbnail_name)){
                 move_uploaded_file($thumbnail_temp_loc,$location);
-                $update_post_description = "UPDATE post_description SET p_heading = '$p_heading' , p_description = '' , p_thumbnail = '$new_file_name' , p_category = '$category', complete_post = '$editor' WHERE p_id = '$id' ";
+                $current_time  = strtotime("now");
+
+                $update_post_description = "UPDATE post_description SET p_heading = '$p_heading' , p_description = '' , p_thumbnail = '$new_file_name' , p_category = '$category', complete_post = '$editor', p_time = '$current_time' WHERE p_id = '$id' ";
                 // INSERT INTO `post_description`(`p_heading`, `p_description`, `p_thumbnail`, `p_category`, `complete_post`, `id_user`) VALUES ('$p_heading','','$new_file_name','$category','$editor',$id_user) editor
                 $result_update_desc = mysqli_query($conn , $update_post_description);
                 
@@ -79,7 +81,7 @@
                  ";
                 }
             } else {
-                $update_post_description = "UPDATE post_description SET p_heading = '$p_heading' , p_description = '' , p_category = '$category', complete_post = '$editor' WHERE p_id = '$id' ";
+                $update_post_description = "UPDATE post_description SET p_heading = '$p_heading' , p_description = '' , p_category = '$category', complete_post = '$editor', p_time = '$current_time' WHERE p_id = '$id' ";
                 $result_update_desc = mysqli_query($conn , $update_post_description);
     
                 if($result_update_desc){
