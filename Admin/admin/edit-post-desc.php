@@ -14,7 +14,7 @@
     if($result_get_post_details){
        while ( $post_details_row = mysqli_fetch_assoc($result_get_post_details) ){
         $p_heading = $post_details_row["p_heading"];
-        $editor =  $post_details_row["p_description"];
+        $editor =  $post_details_row["complete_post"];
        }
     }
 
@@ -63,7 +63,7 @@
         if(!empty($editor) && !empty($p_heading) && !empty( $thumbnail_name) ){
             move_uploaded_file($thumbnail_temp_loc,$location);
 
-             $update_post_description = "UPDATE post_description SET p_heading = '$p_heading' , p_description = '$editor' , p_thumbnail = '$new_file_name' WHERE p_id = '$id' ";
+             $update_post_description = "UPDATE post_description SET p_heading = '$p_heading' , complete_post = '$editor' , p_thumbnail = '$new_file_name' WHERE p_id = '$id' ";
 
               $result_update_desc = mysqli_query($conn , $update_post_description);
 
