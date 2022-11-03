@@ -65,10 +65,8 @@ require_once "include/header.php";
                                         <div class="form-group">
                                             <label >Chọn ảnh : </label>
                                             <input type="file" name="dp" class="form-control">
-                                           
                                         </div>
-                                
-                
+                                        
                                         <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
                                             <div class="btn-group">
                                         <input type="submit" value="Lưu thay đổi" class="btn btn-primary w-20 " name="save_changes" >        

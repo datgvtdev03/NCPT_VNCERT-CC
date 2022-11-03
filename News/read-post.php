@@ -68,7 +68,7 @@
             <div class="single_page">
                 <h1> <?php echo $heading; ?> </h1>
                 <div class="single_page_content"> <img class="img-center" style="width:85%; height:300px; margin: 15px"
-                        src="core/upload/thumbnail/<?php echo $img; ?>" alt="">
+                        src="../core/upload/thumbnail/<?php echo $img; ?>" alt="">
                     <blockquote style="font-size: 20px;"> <?php echo $details; ?> </blockquote>
                 </div>
                 <?php

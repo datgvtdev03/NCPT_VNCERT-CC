@@ -2,6 +2,7 @@
 <?php 
     require_once "include/header.php";
 ?>
+<a href="../../core/upload/thumbnail/"></a>
 <?php
 
     // database connection
@@ -38,7 +39,7 @@
 
           if(in_array( $thumbnail_extension , $isallowded ) ){
             $new_file_name =  uniqid("",true).".".$thumbnail_extension;      
-            $location = "upload/thumbnail/".$new_file_name;  
+            $location = "../../core/upload/thumbnail/".$new_file_name;  
           
           }else {
             $thumbnail_err = "<p style='color:red'> * Only JPG , JPEG and PNG files accepted </p>";

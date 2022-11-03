@@ -31,7 +31,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css"> 
 </head>
 <body>
-<div class="container-fluid d-flex justify-content-center" id="navbar">
+<div style="height: 70px; width: 90%; margin: auto; margin-bottom: 15px" class="container-fluid d-flex justify-content-center" id="navbar">
         <nav class="navbar navbar-expand-md">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -547,8 +547,7 @@ Hà Nội</a>
                     <a href="#">[HCM] 02 Solution Architects–Up to $2000</a>
                   </div>
                   <div class="job-company">
-                    <a href="#">Fpt Software</a> | <a href="#" class="job-address"><i class="fa fa-map-marker" aria-hidden="true"></i>
-Đà Nẵng</a>
+                    <a href="#">Fpt Software</a> | <a href="#" class="job-address"><i class="fa fa-map-marker" aria-hidden="true"></i> Đà Nẵng</a>
                   </div>
 
                   <div class="job-inf">
@@ -584,7 +583,7 @@ Hà Nội</a>
 
 <!-- footer -->
 
-<footer class="container-fluid py-5">
+<footer style="width: 90%; margin: auto; margin-top: 15px " class="container-fluid py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 ">
