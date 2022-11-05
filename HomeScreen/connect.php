@@ -5,4 +5,5 @@
     $database = "NCPT_VNCERT/CC";
 
     $conn = mysqli_connect($severnam, $username, $password, $database);
+//test  push
 ?>
