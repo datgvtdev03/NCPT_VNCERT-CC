@@ -155,57 +155,57 @@
                
                    <!-- ho ten -->
                     <div class="form-group">
-                        <label> Họ tên: </label>
-                        <input type="text" name="fullname" id="fullname"><?php echo $fullname_txt; ?>
+                        <label> Họ tên: </label></br>
+                        <input type="text" name="fullname" id="fullname" placeholder="<?php echo $fullname_txt; ?>">
                         <?php echo $fullname_err; ?>
                     </div>
 
                     <!-- email -->
                     <div class="form-group">
-                        <label> Email: </label>
-                        <input type="text" name="email" id="email"><?php echo $email_txt; ?>
+                        <label> Email: </label></br>
+                        <input type="text" name="email" id="email"placeholder="<?php echo $email_txt; ?>">
                         <?php echo $email_err; ?>
                     </div>
 
                     <!-- //mat khau -->
                     <div class="form-group">
-                        <label> Password: </label>
-                        <input type="text" name="pass" id="pass"><?php echo $password_txt; ?>
+                        <label> Password: </label></br>
+                        <input type="text" name="pass" id="pass" placeholder="<?php echo $password_txt; ?>">
                         <?php echo $password_err; ?>
                     </div>
 
                     <!-- so dien thoai -->
                     <div class="form-group">
-                        <label> Số điện thoại: </label>
-                        <input type="text" name="phone" id="phone"><?php echo $phonenumber_txt; ?>
+                        <label> Số điện thoại: </label></br>
+                        <input type="text" name="phone" id="phone" placeholder="<?php echo $phonenumber_txt; ?>">
                         <?php echo $phonenumber_err; ?>
                     </div>
 
                     <!-- dia chi -->
                     <div class="form-group">
-                        <label> Địa chỉ: </label>
-                        <input type="text" name="address" id="address"><?php echo $address_txt; ?>
+                        <label> Địa chỉ: </label></br>
+                        <input type="text" name="address" id="address" placeholder="<?php echo $address_txt; ?>">
                         <?php echo $address_err; ?>
                     </div>
 
                     <!-- ngay sinh -->
                     <div class="form-group">
-                        <label> Ngày sinh: </label>
-                        <input type="text" name="date" id="date"><?php echo $dateOfBirth_txt; ?>
+                        <label> Ngày sinh: </label></br>
+                        <input type="text" name="date" id="date" placeholder="<?php echo $dateOfBirth_txt; ?>">
                         <?php echo $dateOfBirth_err; ?>
                     </div>
                    
                    <!-- nhiem vu -->
                     <div class="form-group">
-                        <label> Nhiệm vụ: </label>
-                        <input type="text" name="missions" id="missions"><?php echo $mission_txt; ?>
+                        <label> Nhiệm vụ: </label></br>
+                        <input type="text" name="missions" id="missions" placeholder="<?php echo $mission_txt; ?>">
                         <?php echo $mission_err; ?>
                     </div>
 
                      <!-- check mission -->
                      <div class="form-group">
-                        <label> Check mission: </label>
-                        <input type="text" name="checkmission" id="checkmission"><?php echo $check_mission_text; ?>
+                        <label> Check mission: </label></br>
+                        <input type="text" name="checkmission" id="checkmission" placeholder="<?php echo $check_mission_text; ?>">
                         <?php echo $check_mission_err; ?>
                     </div>
 

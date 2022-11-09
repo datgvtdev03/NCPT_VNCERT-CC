@@ -137,56 +137,56 @@
                
                    <!-- ho ten -->
                     <div class="form-group">
-                        <label> Họ tên: </label>
+                        <label> Họ tên: </label></br>
                         <input type="text" name="fullname" id="fullname"><?php echo $fullname_txt; ?>
                         <?php echo $fullname_err; ?>
                     </div>
 
                     <!-- email -->
                     <div class="form-group">
-                        <label> Email: </label>
+                        <label> Email: </label></br>
                         <input type="text" name="email" id="email"><?php echo $email_txt; ?>
                         <?php echo $email_err; ?>
                     </div>
 
                     <!-- //mat khau -->
                     <div class="form-group">
-                        <label> Password: </label>
+                        <label> Password: </label></br>
                         <input type="text" name="pass" id="pass"><?php echo $password_txt; ?>
                         <?php echo $password_err; ?>
                     </div>
 
                     <!-- so dien thoai -->
                     <div class="form-group">
-                        <label> Số điện thoại: </label>
+                        <label> Số điện thoại: </label></br>
                         <input type="text" name="phone" id="phone"><?php echo $phonenumber_txt; ?>
                         <?php echo $phonenumber_err; ?>
                     </div>
 
                     <!-- dia chi -->
                     <div class="form-group">
-                        <label> Địa chỉ: </label>
+                        <label> Địa chỉ: </label></br>
                         <input type="text" name="address" id="address"><?php echo $address_txt; ?>
                         <?php echo $address_err; ?>
                     </div>
 
                     <!-- ngay sinh -->
                     <div class="form-group">
-                        <label> Ngày sinh: </label>
+                        <label> Ngày sinh: </label></br>
                         <input type="text" name="date" id="date"><?php echo $dateOfBirth_txt; ?>
                         <?php echo $dateOfBirth_err; ?>
                     </div>
                    
                    <!-- nhiem vu -->
                     <div class="form-group">
-                        <label> Nhiệm vụ: </label>
+                        <label> Nhiệm vụ: </label></br>
                         <input type="text" name="missions" id="missions"><?php echo $mission_txt; ?>
                         <?php echo $mission_err; ?>
                     </div>
 
                      <!-- check mission -->
                      <div class="form-group">
-                        <label> Check position: </label>
+                        <label> Check position: </label></br>
                         <input type="text" name="checkmission" id="checkmission"><?php echo $check_mission_text; ?>
                         <?php echo $check_mission_err; ?>
                     </div>
