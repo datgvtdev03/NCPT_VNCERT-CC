@@ -140,42 +140,53 @@
                
                    <!-- ho ten -->
                     <div class="form-group">
+
                         <label> Họ tên: </label>
                         <input type="text" name="fullname" id="fullname">
+
                         <?php echo $fullname_err; ?>
                     </div>
 
 
                     <!-- email -->
                     <div class="form-group">
+
                         <label> Email: </label>
                         <input type="email" name="email" id="email">
+
                         <?php echo $email_err; ?>
                     </div>
 
                     <!-- //mat khau -->
                     <div class="form-group">
+
                         <label> Password: </label>
                         <input type="password" name="pass" id="pass">
+
                         <?php echo $password_err; ?>
                     </div>
 
                     <!-- so dien thoai -->
                     <div class="form-group">
+
                         <label> Số điện thoại: </label>
                         <input type="text" name="phone" id="phone" >
+
                         <?php echo $phonenumber_err; ?>
                     </div>
 
                     <!-- dia chi -->
                     <div class="form-group">
+
                         <label> Địa chỉ: </label>
                         <input type="text" name="address" id="address" >
+
                         <?php echo $address_err; ?>
                     </div>
 
                     <!-- ngay sinh -->
                     <div class="form-group">
+
                         <label> Ngày sinh: </label>
                         <input type="date" name="date" id="date">
                         <?php echo $dateOfBirth_err; ?>
@@ -188,6 +199,7 @@
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="checkmission" <?php if($check_mission_text == "1" ){ echo "checked"; } ?>  value="1"  selected>
                         <label class="form-check-label" >Admin</label>
+
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="checkmission" <?php if($check_mission_text == "2" ){ echo "checked"; } ?>  value="2">

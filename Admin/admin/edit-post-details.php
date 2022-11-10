@@ -145,41 +145,67 @@
                
                    <!-- ho ten -->
                     <div class="form-group">
+<<<<<<< HEAD
                         <label> Họ tên: </label>
                         <input type="text" name="fullname" id="fullname"  value=" <?php echo $fullname_txt; ?>">  
+=======
+                        <label> Họ tên: </label></br>
+                        <input type="text" name="fullname" id="fullname" placeholder="<?php echo $fullname_txt; ?>">
+>>>>>>> c8992a75143a8d68103283379d031e778d28de32
                         <?php echo $fullname_err; ?>
                     </div>
 
                     <!-- email -->
                     <div class="form-group">
+<<<<<<< HEAD
                         <label> Email: </label>
                         <input type="email" name="email" id="email" value="<?php echo $email_txt; ?>">
+=======
+                        <label> Email: </label></br>
+                        <input type="text" name="email" id="email"placeholder="<?php echo $email_txt; ?>">
+>>>>>>> c8992a75143a8d68103283379d031e778d28de32
                         <?php echo $email_err; ?>
                     </div>
 
                     <!-- //mat khau -->
                     <div class="form-group">
+<<<<<<< HEAD
                         <label> Password: </label>
                         <input type="password" name="pass" id="pass" value="<?php echo $password_txt; ?>">
+=======
+                        <label> Password: </label></br>
+                        <input type="text" name="pass" id="pass" placeholder="<?php echo $password_txt; ?>">
+>>>>>>> c8992a75143a8d68103283379d031e778d28de32
                         <?php echo $password_err; ?>
                     </div>
 
                     <!-- so dien thoai -->
                     <div class="form-group">
+<<<<<<< HEAD
                         <label> Số điện thoại: </label>
                         <input type="text" name="phone" id="phone" value="<?php echo $phonenumber_txt; ?>">
+=======
+                        <label> Số điện thoại: </label></br>
+                        <input type="text" name="phone" id="phone" placeholder="<?php echo $phonenumber_txt; ?>">
+>>>>>>> c8992a75143a8d68103283379d031e778d28de32
                         <?php echo $phonenumber_err; ?>
                     </div>
 
                     <!-- dia chi -->
                     <div class="form-group">
+<<<<<<< HEAD
                         <label> Địa chỉ: </label>
                         <input type="text" name="address" id="address" value="<?php echo $address_txt; ?>">
+=======
+                        <label> Địa chỉ: </label></br>
+                        <input type="text" name="address" id="address" placeholder="<?php echo $address_txt; ?>">
+>>>>>>> c8992a75143a8d68103283379d031e778d28de32
                         <?php echo $address_err; ?>
                     </div>
 
                     <!-- ngay sinh -->
                     <div class="form-group">
+<<<<<<< HEAD
                         <label> Ngày sinh: </label>
                         <input type="date" name="date" id="date" value="<?php echo $dateOfBirth_txt; ?>">
                         <?php echo $dateOfBirth_err; ?>
@@ -189,6 +215,25 @@
                     <!-- check permission -->
                     <div class="form-group form-check form-check-inline">
                         <label class="form-check-label" >Check permission :</label>
+=======
+                        <label> Ngày sinh: </label></br>
+                        <input type="text" name="date" id="date" placeholder="<?php echo $dateOfBirth_txt; ?>">
+                        <?php echo $dateOfBirth_err; ?>
+                    </div>
+                   
+                   <!-- nhiem vu -->
+                    <div class="form-group">
+                        <label> Nhiệm vụ: </label></br>
+                        <input type="text" name="missions" id="missions" placeholder="<?php echo $mission_txt; ?>">
+                        <?php echo $mission_err; ?>
+                    </div>
+
+                     <!-- check mission -->
+                     <div class="form-group">
+                        <label> Check mission: </label></br>
+                        <input type="text" name="checkmission" id="checkmission" placeholder="<?php echo $check_mission_text; ?>">
+                        <?php echo $check_mission_err; ?>
+>>>>>>> c8992a75143a8d68103283379d031e778d28de32
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="checkmission" <?php if($check_mission_text == "1" ){ echo "checked"; } ?>  value="1"  selected>
