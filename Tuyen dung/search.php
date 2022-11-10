@@ -24,70 +24,37 @@
   <!-- Owl Stylesheets -->
   <link rel="stylesheet" href="css/owlcarousel/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owlcarousel/owl.theme.default.min.css">
+  <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="css copy/bootstrap.css">
+    <link rel="stylesheet" href="css copy/style.css">
    <!-- main css -->
   <link rel="stylesheet" type="text/css" href="css/style.css"> 
 </head>
 <body>
-<!-- main nav -->
-<div class="container-fluid fluid-nav another-page">
-  <div class="container cnt-tnar">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light tjnav-bar">
-  <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-  <a href="#" class="nav-logo">
-    <img src="img/techjobs_bgw.png">
-  </a>
-  <button class="navbar-toggler tnavbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <!-- <span class="navbar-toggler-icon"></span> -->
-    <i class="fa fa-bars icn-res" aria-hidden="true"></i>
-
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto tnav-left tn-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Việc Làm IT</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Tin Tức</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-    </ul>
-    <ul class="navbar-nav mr-auto my-2 my-lg-0 tnav-right tn-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i> <span class="hidden-text">Tìm kiếm</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Đăng Ký</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Đăng Nhập</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          VI
-        </a>
-        <div class="dropdown-menu tdropdown" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">English</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link btn-employers" href="#" tabindex="-1" aria-disabled="true" style="color: #fff!important">Nhà Tuyển Dụng</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-  </div>
-</div>
+<div style="height: 70px; width: 90%; margin: auto; margin-bottom: 15px" class="container-fluid d-flex justify-content-center" id="navbar">
+        <nav class="navbar navbar-expand-md">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../HomeScreen/index.php">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../About-us/view/client/About-us.php">Đội ngũ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../News/news.php">Tin tức</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tuyển dụng</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Contact/contactForm.html">Liên hệ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../core/login.php">Đăng nhập</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 <!-- (end) main nav -->
 
 <div class="clearfix"></div>
@@ -95,17 +62,6 @@
 <!-- search section -->
 <div class="container-fluid search-fluid">
   <div class="container">
-    <div class="search-wrapper">
-
-      <ul class="nav nav-tabs search-nav-tabs" id="myTab" role="tablist">
-      <li class="nav-item search-nav-item">
-        <a class="nav-link snav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Tìm việc làm</a>
-      </li>
-      <li class="nav-item search-nav-item">
-        <a class="nav-link snav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Tìm công ty</a>
-      </li>
-    </ul>
-    <div class="tab-content search-tab-content" id="myTabContent">
       <!-- content tab 1 -->
       <div class="tab-pane stab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <form class="bn-search-form">
@@ -117,33 +73,6 @@
                     <input type="text" class="form-control sinput" placeholder="Nhập kỹ năng, công việc,...">
                     <span><i class="fa fa-search"></i></span>
                   </div>
-                </div>
-                <div class="col-md-4">
-                  <select id="computer-languages">
-                    <option value="" selected hidden >Tất cả ngôn ngữ</option>
-                    <option>Java</option>
-                    <option>.NET</option>
-                    <option>Javascript</option>
-                    <option>Php</option>
-                    <option>Python</option>
-                    <option>QC QC</option>
-                    <option>Business Analyst</option>
-                    <option>Tester</option>
-                    <option>Ruby</option>
-                </select>
-                <i class="fa fa-code sfa" aria-hidden="true"></i>
-                </div>
-                <div class="col-md-3">
-                  <select id="s-provinces">
-                    <option value="" selected hidden >Tất cả địa điểm</option>
-                    <option>Đà Nẵng</option>
-                    <option>Hà Nội</option>
-                    <option>Hồ Chí Minh</option>
-                    <option>Buôn Ma Thuột</option>
-                    <option>Quy Nhơn</option>
-                    <option>Nha Trang</option>
-                </select>
-                <i class="fa fa-map-marker sfa" aria-hidden="true"></i>
                 </div>
               </div>
             </div>
@@ -184,10 +113,6 @@
   <div class="container search-wrapper">
     <div class="row">
       <div class="col-md-3 col-sm-12 col-12">
-                    <a id="click_advance" class="btn btn-c-filter" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
-                <i class="pr-2 fa fa-times" id="icon-s-sw" aria-hidden="true"></i>Filter &amp; Refind
-              </a>
-
             <div class="collapse show" id="collapseExample" style="">
               <div class="card card-body bg-card-body-filter">
                 <div class="filter-bar">
@@ -408,10 +333,9 @@
                                 </div>
                                </div>
                             </div>
-                                </div>
-
+                          </div>
                         </div>
-                    </div> <!-- filter bar -->
+                    </div>
                     <script type="text/javascript">
                         window.onload = function() {screenCollapse()};
 
@@ -427,8 +351,7 @@
               </div>
             </div> <!-- ./ collapse -->
                 </div>
-    <div class="col-md-9 col-sm-12 col-12">
-      <h4 class="search-find">Tìm thấy 4 việc làm đang tuyển dụng</h4>
+    <div class="col-md-9 col-sm-12 col-12"> 
       <div class="job-board-wrap">
         <div class="job-group">
           <div class="job pagi">
@@ -624,8 +547,7 @@ Hà Nội</a>
                     <a href="#">[HCM] 02 Solution Architects–Up to $2000</a>
                   </div>
                   <div class="job-company">
-                    <a href="#">Fpt Software</a> | <a href="#" class="job-address"><i class="fa fa-map-marker" aria-hidden="true"></i>
-Đà Nẵng</a>
+                    <a href="#">Fpt Software</a> | <a href="#" class="job-address"><i class="fa fa-map-marker" aria-hidden="true"></i> Đà Nẵng</a>
                   </div>
 
                   <div class="job-inf">
@@ -657,128 +579,46 @@ Hà Nội</a>
 </div>
 
 
-<!-- job support -->
-<div class="container-fluid job-support-wrapper">
- <div class="container-fluid job-support-wrap">
-  <div class="container job-support">
-    <div class="row">
-      <div class="col-md-6 col-sm-12 col-12">
-        <ul class="spp-list">
-          <li>
-            <span><i class="fa fa-question-circle pr-2 icsp"></i>Hỗ trợ nhà tuyển dụng:</span>
-          </li>
-          <li>
-            <span><i class="fa fa-phone pr-2 icsp"></i>0123.456.789</span>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-6 col-sm-12 col-12">
-        <div class="newsletter">
-            <span class="txt6">Đăng ký nhận bản tin việc làm</span>
-            <div class="input-group frm1">
-              <input type="text" placeholder="Nhập email của bạn" class="newsletter-email form-control">
-              <a href="#" class="input-group-addon"><i class="fa fa-lg fa-envelope-o colorb"></i></a>
-            </div>
-          </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-<!-- (end) job support -->
 
 
 <!-- footer -->
-<div class="container-fluid footer-wrap  clear-left clear-right">
-  <div class="container footer">
-    <div class="row">
-      <div class="col-md-4 col-sm-8 col-12">
-        <h2 class="footer-heading">
-          <span>About</span>
-        </h2>
-        <p class="footer-content">
-          Discover the best way to find houses, condominiums, apartments and HDBs for sale and rent in Singapore with JobsOnline, Singapore's Fastest Growing Jobs Portal.
-        </p>
-        <ul class="footer-contact">
-          <li>
-            <a href="#">
-              <i class="fa fa-phone fticn"></i> +123 456 7890
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-envelope fticn"></i> 
-              hello@123.com
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-map-marker fticn"></i>
-              33 Xô Viết Nghệ Tĩnh, Đà Nẵng
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-2 col-sm-4 col-12">
-        <h2 class="footer-heading">
-          <span>Ngôn ngữ nổi bật</span>
-        </h2>
-        <ul class="footer-list">
-          <li><a href="#">Javascript</a></li>
-          <li><a href="#">Java</a></li>
-          <li><a href="#">Frontend</a></li>
-          <li><a href="#">SQL Server</a></li>
-          <li><a href="#">.NET</a></li>
-        </ul>
-      </div>
-      <div class="col-md-2 col-sm-6 col-12">
-        <h2 class="footer-heading">
-          <span>Tất cả ngành nghề</span>
-        </h2>
-        <ul class="footer-list">
-          <li><a href="#">Lập trình viên</a></li>
-          <li><a href="#">Kiểm thử phần mềm</a></li>
-          <li><a href="#">Kỹ sư cầu nối</a></li>
-          <li><a href="#">Quản lý dự án</a></li>
-        </ul>
-      </div>
-      <div class="col-md-2 col-sm-6 col-12">
-        <h2 class="footer-heading">
-          <span>Tất cả hình thức</span>
-        </h2>
-        <ul class="footer-list">
-          <li><a href="#">Nhân viên chính thức</a></li>
-          <li><a href="#">Nhân viên bán thời gian</a></li>
-          <li><a href="#">Freelancer</a></li>
-        </ul>
-      </div>
-      <div class="col-md-2 col-sm-12 col-12">
-        <h2 class="footer-heading">
-          <span>Tất cả tỉnh thành</span>
-        </h2>
-        <ul class="footer-list">
-          <li><a href="#">Hồ Chính Minh</a></li>
-          <li><a href="#">Hà Nội</a></li>
-          <li><a href="#">Đà Nẵng</a></li>
-          <li><a href="#">Buôn Ma Thuột</a></li>
-        </ul>
-      </div>
 
-
-    </div>
-  </div>
-</div>
-
-<footer class="container-fluid copyright-wrap">
-  <div class="container copyright">
-    <p class="copyright-content">
-      PGP KEY for ir@vncert.vn: 7D178B1183B11F192263A9C412EB37281DF03474
-Cơ quan chủ quản: Cục An toàn thông tin - Trung tâm Ứng cứu khẩn cấp không gian mạng Việt Nam
-Giấy phép số: 303/GP-BC do Cục Báo chí - Bộ Văn hoá Thông tin cấp ngày 4/10/2006
-Chịu trách nhiệm chính - Quyền Giám đốc Trung tâm VNCERT/CC: Ông Nguyễn Đức Tuân
-    </p>
-  </div>
-</footer>
+<footer style="width: 90%; margin: auto; margin-top: 15px " class="container-fluid py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 ">
+                    <div class="logo-part">
+                        <img src="images/logo.png" class="w-75 logo-footer"
+                            style="margin: auto; display: block; padding-top: 18%;">
+                        <h4 style="font-size: 15px; margin-top: 7%; color: #DFDFDF;">Trung tâm Ứng cứu khẩn cấp không
+                            gian mạng Việt Nam</h4>
+                    </div>
+                </div>
+                <div class="col-md-7 px-4" style="line-height: 25px;">
+                    <h6 style="color: #DFDFDF;"> Thông tin liên hệ</h6>
+                    <span class="create"><img src="images/phone-call.png" /> Hotline:</span><br>
+                    <p class="contact-info">0869 100317</p>
+                    <span class="create" style="padding-left: 20px;"> Fax:</span><br>
+                    <p class="contact-info">84.24.36404425</p>
+                    <span class="create"><img src="images/mail.png" /> Email:</span><br>
+                    <p class="contact-info">office@vncert.vn</p>
+                    <span class="create"><img src="images/maps-and-flags.png" /> Địa chỉ:</span>
+                    <p class="contact-info">Tầng 5, 115 Trần Duy Hưng, Trung Hoà, Cầu Giấy, Hà Nội</p>
+                </div>
+                <div class="col-md-2">
+                    <h6 style="color: #DFDFDF;">Hỗ trợ</h6>
+                    <ul id="footer-menu">
+                        <li> <a href="../HomeScreen/index.php"> Trang chủ</a> </li>
+                        <li> <a href="../About-us/view/client/About-us.php"> Đội ngũ</a> </li>
+                        <li> <a href="#"> Tin tức</a> </li>
+                        <li> <a href="../Tuyen dung/search.php"> Tuyển dụng</a> </li>
+                        <li> <a href="../Contact/contactForm.html"> Liên hệ</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
 
 
 <!-- (end) footer -->

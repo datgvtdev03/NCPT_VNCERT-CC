@@ -54,11 +54,11 @@
     <div id="form" class="pt-5 form-input-content">
         <div class="card login-form mb-0">
             <div class="card-body pt-3 shadow">
-                <h4 class="text-center">Add About Us Section </h4>
+                <h4 class="text-center">Thêm phần Giới thiệu về chúng tôi </h4>
                 <form method="POST" enctype="multipart/form-data" action=" <?php htmlspecialchars($_SERVER['PHP_SELF']) ?>"> 
                        
                     <div class="form-group">
-                        <label> <h4 class="pt-4">About Us: </h4> </label>
+                        <label> <h4 class="pt-4">Về chúng tôi: </h4> </label>
                         <textarea name="about" id="about"> <?php echo $about; ?></textarea>    
                         <?php echo $about_err; ?>  
                     </div>

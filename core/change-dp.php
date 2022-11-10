@@ -2,7 +2,7 @@
 require_once "include/header.php";
 ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-
+<a href="../core//upload/dp/"></a>
 <?php 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
      
@@ -15,7 +15,7 @@ require_once "include/header.php";
 
         if( in_array($extension , $allowed_types)  ){
             $new_file_name = uniqid("",true).".".$extension;
-            $location = "upload/dp/".$new_file_name;
+            $location = "../core//upload/thumbnail/".$new_file_name;
             if(move_uploaded_file($temp_loc, $location)){
                 
                 // database connection 
@@ -65,10 +65,8 @@ require_once "include/header.php";
                                         <div class="form-group">
                                             <label >Chọn ảnh : </label>
                                             <input type="file" name="dp" class="form-control">
-                                           
                                         </div>
-                                
-                
+                                        
                                         <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
                                             <div class="btn-group">
                                         <input type="submit" value="Lưu thay đổi" class="btn btn-primary w-20 " name="save_changes" >        

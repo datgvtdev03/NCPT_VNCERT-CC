@@ -1387,7 +1387,7 @@ span.cate-count {
 
 /* Footer */
 .footer-wrap {
-    background: #fff;
+    background:#007bff ;
 }
 .footer {
 
@@ -1396,7 +1396,7 @@ h2.footer-heading {
     margin-top: 1rem;
 }
 h2.footer-heading span {
-    color: #555;
+    color: white;
     font-size: .9rem;
     text-transform: uppercase;
 }
@@ -1412,7 +1412,7 @@ ul.footer-contact li {
 }
 ul.footer-contact li a {
     font-size: .9rem;
-    color: #555;
+    color: white;
 }
 .fticn {
     background: #d8d8d8;
@@ -1430,11 +1430,11 @@ ul.footer-list li {
     padding: 3px;
 }
 ul.footer-list li a {
-    color: #555;
+    color: white;
     font-size: .9rem;
 } 
 footer.copyright-wrap {
-    background: #f9f9f9;
+    background: #0558b2;
 }
 .copyright {
 
@@ -1443,7 +1443,7 @@ p.copyright-content {
     margin: 0;
     padding: 15px 0;
     font-size: .9rem;
-    color: #555;
+    color: white;
 }
 p.copyright-content a {
     color: #2196F3;
@@ -1914,11 +1914,12 @@ ul.job-add li {
 }
 
 .another-page .navbar-light .navbar-nav .nav-link {
-    color: #000!important;
+    color: white!important;
 }
 
 .another-page {
-    background: #fff;
+
+    background: #007bff;
     margin-bottom: 20px;
     transition: all ease .3s;
     -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.06);

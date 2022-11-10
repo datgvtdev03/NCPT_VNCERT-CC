@@ -40,7 +40,7 @@
 
           if( in_array( $thumbnail_extension , $isallowded ) ){
             $new_file_name =  uniqid("",true).".".$thumbnail_extension;      
-          $location = "../../upload/thumbnail/".$new_file_name;  
+          $location = "upload/thumbnail/".$new_file_name;  
           
           }else {
             $thumbnail_err = "<p style='color:red'> * Chỉ chấp nhận các tệp JPG, JPEG và PNG </p>";
@@ -60,7 +60,7 @@
             echo "<script>
             $(document).ready( function(){
                 $('#showModal').modal('show');
-                $('#addMsg').text('Đã thêm tiêu đề bài đăng thành công!');
+                $('#addMsg').text('Đã thêm bài đăng thành công!');
                 $('#closeBtn').text('Thêm bài viết');
             })
          </script>

@@ -65,7 +65,7 @@
 
                 <div class="nav-control">
                     <div class="hamburger">
-                        <a href="./../news.php" class="toggle-icon"><i class="icon-home"></i></a>
+                        <a href="./../HomeScreen/index.php" class="toggle-icon"><i class="icon-home"></i></a>
                     </div>
                 </div>
                 <div class="text-center">
@@ -91,7 +91,7 @@
 
 
                     <li>
-                        <a href="#">
+                        <a href="./manager-mission.php">
                             <i class="icon-list menu-icon"></i><span class="nav-text">Nhiệm vụ</span>
                         </a>
                     </li>

@@ -12,7 +12,7 @@
                     <a class="nav-link" href="../../../News/news.php">Tin tức</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Tuyển dụng</a>
+                    <a class="nav-link" href="../../../Tuyen dung/search.php">Tuyển dụng</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../../../Contact/contactForm.html">Liên hệ</a>

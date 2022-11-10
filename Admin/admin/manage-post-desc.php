@@ -51,7 +51,7 @@ table {
         <td><?php echo "{$i}."; ?></td>
         <td> <?php echo ucwords($p_heading) ; ?></td>
         <td><?php echo $complete_post; ?></td>
-        <td> <img src="upload/thumbnail/<?php echo $p_thumbnail;?> " class="img-fluid" style="height:70px"> </td>
+        <td> <img src="../../core/upload/thumbnail/<?php echo $p_thumbnail;?> " class="img-fluid" style="height:70px"> </td>
 
         <td>   
             <div class="icon_edit_delete">

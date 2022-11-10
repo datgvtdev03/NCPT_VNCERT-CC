@@ -31,7 +31,7 @@
                     <a class="nav-link" href="news.php">Tin tức</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Tuyển dụng</a>
+                    <a class="nav-link" href="../Tuyen dung/search.php">Tuyển dụng</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../Contact/contactForm.html">Liên hệ</a>
@@ -68,7 +68,7 @@
             <div class="single_page">
                 <h1> <?php echo $heading; ?> </h1>
                 <div class="single_page_content"> <img class="img-center" style="width:85%; height:300px; margin: 15px"
-                        src="core/upload/thumbnail/<?php echo $img; ?>" alt="">
+                        src="../core/upload/thumbnail/<?php echo $img; ?>" alt="">
                     <blockquote style="font-size: 20px;"> <?php echo $details; ?> </blockquote>
                 </div>
                 <?php
@@ -156,9 +156,9 @@
                     <h6 style="color: #DFDFDF;">Hỗ trợ</h6>
                     <ul id="footer-menu">
                         <li> <a href="../HomeScreen/index.php"> Trang chủ</a> </li>
-                        <li> <a href="#"> Đội ngũ</a> </li>
+                        <li> <a href="../About-us/view/client/About-us.php"> Đội ngũ</a> </li>
                         <li> <a href="news.php"> Tin tức</a> </li>
-                        <li> <a href="#"> Tuyển dụng</a> </li>
+                        <li> <a href="../Tuyen dung/search.php"> Tuyển dụng</a> </li>
                         <li> <a href="../Contact/contactForm.html"> Liên hệ</a> </li>
                     </ul>
                 </div>
