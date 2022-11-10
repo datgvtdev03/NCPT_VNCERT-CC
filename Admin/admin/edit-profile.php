@@ -51,12 +51,12 @@
 
             if( !empty($name) && !empty($email) ){
             
-                $sql_select_query = "SELECT email FROM admin WHERE email = '$email' ";
-                $r = mysqli_query($conn , $sql_select_query);
+                // $sql_select_query = "SELECT email FROM admin WHERE email = '$email' ";
+                // $r = mysqli_query($conn , $sql_select_query);
 
-                if( mysqli_num_rows($r) > 0 ){
-                    $emailErr = "<p style='color:red'> * Email Already Register</p>";
-                } else{
+                // if( mysqli_num_rows($r) > 0 ){
+                //     $emailErr = "<p style='color:red'> * Email Already Register</p>";
+                // } else{
 
                     $sql = "UPDATE admin SET name = '$name', email = '$email', gender= '$gender' WHERE email='$_SESSION[email]' ";
                     $result = mysqli_query($conn , $sql);
@@ -74,7 +74,7 @@
                         </script>
                         ";
                     }
-                }
+                // }
 
             }
         }

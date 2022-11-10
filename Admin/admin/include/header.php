@@ -60,10 +60,10 @@
         <div class="nav-header">
 
              <div class="brand-logo">
-             <div>hii</div> 
+             <!-- <div>VNCERT</div>  -->
                 <a >
                     <span class="brand-title">
-    
+                        
                     </span>
                 </a>
             </div> 
@@ -107,15 +107,7 @@
                         </a>
                     </li>
 
-                    <!-- <li>
-                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="fa fa-list-alt menu-icon"></i><span class="nav-text">Post Category</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./add-category.php"> <i class="icon-plus menu-icon"></i>Add Category</a></li>
-                            <li><a href="./manage-category.php"><i class="fa fa-cog menu-icon"></i>Manage Category</a></li>
-                        </ul>
-                    </li> -->
+                    <!-- quanr lys baif vieets -->
 
                     <li>
                     <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -127,6 +119,7 @@
                         </ul>
                     </li>
 
+                    <!-- quan ly nhan vieen  -->
                     <li>
                     <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="fa fa-pencil-square-o menu-icon"></i><span class="nav-text">Quản lý nhân viên</span>
@@ -139,6 +132,26 @@
                       </li>
 
                     <li>
+
+                    <!-- quan ly nhiem vu  -->
+
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                <i class="fa fa-pencil-square-o menu-icon"></i><span class="nav-text">Quản lý nhiệm vụ</span>
+                            </a>
+                            <ul aria-expanded="false">
+                                <li><a href="./add-mission-staff.php"><i class="icon-plus menu-icon"></i>Thêm nhiệm vụ</a></li>
+                                <li><a href="./manage-mission-staff.php"><i class="fa fa-cog menu-icon"></i>Danh sách nhiệm vụ</a></li>
+
+                            </ul>
+                        </li>
+
+                    <li>
+
+
+
+
+
                         <a href="./contact-us.php" >
                             <i class="fa fa-address-book menu-icon"></i><span class="nav-text">Liên hệ</span>
                         </a>

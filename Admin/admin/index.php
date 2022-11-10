@@ -15,14 +15,6 @@ $select_members = "SELECT * FROM admin WHERE p_time IS NOT NULL";
 $total_member  = mysqli_query($conn , $select_members);
 
 
-
-
-// selecting category details
-// $sql = "SELECT * FROM post_category";
-// $result = mysqli_query($conn , $sql);
-// $i = 1;
-
-
 // selecting about us
 $about_us = "";
 $get_about = "SELECT * FROM about_us ORDER BY id DESC LIMIT 1";
@@ -82,7 +74,7 @@ table {
             </div>
         </div>
 
-        <!-- quản lý nhân viên (chưa xử lý đc logic. chỉ hiện kên giao diện) -->
+        <!-- quản lý nhân viên -->
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="card shadow " >
                 <ul class="list-group list-group-flush">
@@ -96,6 +88,21 @@ table {
                 </ul>
             </div>
         </div>
+
+          <!-- Quản lý nhiệm vụ của nhân viên -->
+        <!-- <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card shadow " >
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-center">Quản lý nhiệm vụ</li>
+                    <li class="list-group-item text-left">Số lượng nhân viên : <?php 
+                        if($total_member){
+                            echo mysqli_num_rows($total_member);
+                        }
+                    ?></li>
+                    <li class="list-group-item text-center"><a href="manage-post-details.php"><b>Xem tất cả nhiệm vụ</b></a>   </li>
+                </ul>
+            </div>
+        </div> -->
 
 
 

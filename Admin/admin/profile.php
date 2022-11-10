@@ -33,7 +33,7 @@ require_once "include/header.php";
         </div>
         <div class="col-12 col-lg-6 col-md-6">
             <div class="card shadow" style="width: 20rem;">
-            <img src="upload/dp/<?php if(!empty($dp)){ echo $dp; }else{ echo "1.jpg"; } ?>" class="rounded img-fluid  card-img-top"  style="height: 300px "  alt="...">
+            <img src="../admin/upload/dp/<?php if(!empty($dp)){ echo $dp; }else{ echo "1.jpg"; } ?>" class="rounded img-fluid  card-img-top"  style="height: 300px "  alt="...">
                 <div class="card-body">
                 <h2 class="text-center mb-4"><?php echo $name; ?> </h2>
                     <p class="card-text">Email: <?php echo $_SESSION["email"] ?> </p>

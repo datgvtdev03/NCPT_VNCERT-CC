@@ -64,9 +64,19 @@
 
             if ($_SESSION["checkMission"] == 1){
               header("Location: ../Admin/admin/index.php");
+
+            
+              return; 
+            } else {
+              // header("Location: index.php?login-sucess");
+              header("Location: ../core/index.php");
+              // header("Location: ../core/add-post-desc.php");
+
+              // <a href="../core/add-post-desc.php"></a>
+  
               return;
+
             }
-            header("Location: index.php?login-sucess");
 
             // header("Location: index.php?login-sucess");
            }
@@ -109,6 +119,7 @@
 
                                     <div class="form-group">
                                         <label >Mật khẩu :</label>
+                                        
                                         <input type="password" class="form-control" name="password" >
                                         <?php echo $pass_err; ?>            
 

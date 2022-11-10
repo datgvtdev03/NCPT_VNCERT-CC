@@ -39,8 +39,7 @@ table {
         <th>Ngày sinh</th>
         <th>Địa chỉ</th>
         <th>Giới tính</th>
-        <th>Nhiệm vụ</th>
-        <th>Check mision</th>
+        <th>Check position</th>
         <th>Hoạt động</th>
     </tr>
 
@@ -54,7 +53,6 @@ table {
                 $dateOfBirth = $rows["dateOfBirth"];
                 $address = $rows["address"];
                 $gender = $rows["gender"];
-                $mission = $rows["mission"];
                 $check_mission = $rows["checkMission"];
                 $id = $rows["id"];
     ?>
@@ -67,7 +65,6 @@ table {
         <td><?php echo $dateOfBirth; ?></td>
         <td><?php echo $address; ?></td>
         <td><?php echo $gender; ?></td>
-        <td><?php echo $mission; ?></td>
         <td><?php echo $check_mission; ?></td>
 
         <td> <?php

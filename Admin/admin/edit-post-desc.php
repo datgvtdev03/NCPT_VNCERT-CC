@@ -60,7 +60,7 @@
           }
         }
 
-        if(!empty($editor) && !empty($p_heading) && !empty( $thumbnail_name) ){
+        if(!empty($editor) && !empty($p_heading) ){
             move_uploaded_file($thumbnail_temp_loc,$location);
 
              $update_post_description = "UPDATE post_description SET p_heading = '$p_heading' , complete_post = '$editor' , p_thumbnail = '$new_file_name' WHERE p_id = '$id' ";
@@ -108,9 +108,10 @@
                     </div>
                     <div class="form-group">
                         <label> Ảnh: </label>
-                        <input type="file" name="thumbnail" class="form-control"  >
+                        <input type="file" name="thumbnail" class="form-control"  value="<?php echo $isallowded; ?>">
                         <?php echo $thumbnail_err; ?>
                     </div>
+
                     <div class="form-group">
                         <input type="submit" value="Add" class="btn login-form__btn submit w-10 " name="submit_expense" >
                     </div>
