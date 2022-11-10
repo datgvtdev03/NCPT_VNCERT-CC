@@ -11,6 +11,7 @@
     $p_heading = $editor =  $thumbnail_name = "";
 
     $t = 1;
+    
     if( $_SERVER["REQUEST_METHOD"] == "POST" ){
         
         if( empty( $_REQUEST["p_heading"] ) ){
@@ -27,6 +28,7 @@
 
         if( empty($_FILES["thumbnail"]["name"])){
            $thumbnail_err = "<p style='color:red'> * Ảnh không được để trống! </p>";
+            // $thumbnail_temp_loc = "";
         }else{
 
             $thumbnail_name = $_FILES["thumbnail"]["name"];
@@ -47,6 +49,8 @@
         }
 
 
+
+
         if(!empty($editor) && !empty($p_heading) && !empty( $thumbnail_name ) ){
             move_uploaded_file($thumbnail_temp_loc,$location);
 
@@ -60,7 +64,7 @@
 
         $result_add_desc = mysqli_query($conn , $add_post_description);
 
-        echo "<script>console.log('Debug p_heading: " . $complete_post . "' );</script>";
+        // echo "<script>console.log('Debug p_heading: " . $complete_post . "' );</script>";
  
         if($result_add_desc){
             echo "<script>
@@ -74,7 +78,7 @@
          </script>
          ";
         }
-
+        
         }
      
     }

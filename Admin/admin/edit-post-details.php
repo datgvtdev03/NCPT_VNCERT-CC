@@ -21,7 +21,7 @@
             $dateOfBirth_txt = $select_member_row["dateOfBirth"];
             $address_txt = $select_member_row["address"];
             $gender_txt = $select_member_row["gender"];
-            $mission_txt = $select_member_row["mission"];
+            // $mission_txt = $select_member_row["mission"];
             $check_mission_text = $select_member_row["checkMission"];
         }
     }
@@ -81,17 +81,11 @@
             $dateOfBirth_txt = $_REQUEST["date"];
         }
 
-        //check nhiem vu 
-        if( empty( $_REQUEST["missions"])) {
-            $mission_err = "<p style='color:red'> * Nhiệm vụ không được để trống! </p>";
-            $mission_txt = "";
-        } else {
-            $mission_txt = $_REQUEST["missions"];
-        }
+      
 
          //check mission
          if( empty( $_REQUEST["checkmission"])) {
-            $check_mission_err = "<p style='color:red'> * Nhiệm vụ không được để trống! </p>";
+            // $check_mission_err = "<p style='color:red'> * Nhiệm vụ không được để trống! </p>";
             $check_mission_text = "";
         } else {
             $check_mission_text = $_REQUEST["checkmission"];
@@ -106,31 +100,27 @@
        
 
 
-        if( !empty($fullname_txt) && !empty($email_txt) && !empty($password_txt) && !empty($address_txt) && !empty($phonenumber_txt) && !empty($dateOfBirth_txt) && !empty($mission_txt) && !empty($check_mission_text)) {
+        if( !empty($fullname_txt) && !empty($email_txt) && !empty($password_txt) && !empty($address_txt) && !empty($phonenumber_txt) && !empty($dateOfBirth_txt) && !empty($check_mission_text)) {
 
             $current_time  = strtotime("now");
             $sql_select_query = "SELECT email FROM admin WHERE email = '$email_txt' ";
             $r = mysqli_query($conn , $sql_select_query);
 
 
-            if(mysqli_num_rows($r) > 0) {
-                $email_err = "<p style='color:red'> * Email đã tồn tại! </p>";
-            } else {
-              
-                $update_member = "UPDATE admin SET name = '$fullname_txt', email = '$email_txt', password = '$password_txt', gender = '$gender_txt', phoneNumber = '$phonenumber_txt', address = '$address_txt', mission = '$mission_txt', dateOfBirth = '$dateOfBirth_txt', checkMission = '$check_mission_text', p_time = '$current_time' WHERE id = '$id' ";
+                $update_member = "UPDATE admin SET name = '$fullname_txt', email = '$email_txt', password = MD5( '".$password_txt."' ), gender = '$gender_txt', phoneNumber = '$phonenumber_txt', address = '$address_txt', dateOfBirth = '$dateOfBirth_txt', checkMission = '$check_mission_text', p_time = '$current_time' WHERE id = '$id' ";
 
                 $result_add_member = mysqli_query($conn , $update_member);
                 
-            }
+            
 
             if($result_add_member){
                                     echo "<script>
                                     $(document).ready( function(){
                                         $('#showModal').modal('show');
                                         $('#linkBtn').attr('href', 'manage-post-details.php');
-                                        $('#linkBtn').text('View All Post Details');
-                                        $('#addMsg').text('Post Details Edited Successfully!');
-                                        $('#closeBtn').text('Edit Again');
+                                        $('#linkBtn').text('Xem tất cả nhân viên');
+                                        $('#addMsg').text('Chỉnh sửa thông tin thành viên thành công!');
+                                        $('#closeBtn').text('Sửa lại');
                                     })
                                 </script>
                                 ";
@@ -150,64 +140,64 @@
     <div id="form" class="pt-5 form-input-content">
         <div class="card login-form mb-0">
             <div class="card-body pt-3 shadow">
-                <h3 class="text-center">Thêm nhân viên </h3>
+                <h3 class="text-center">Sửa thông tin nhân viên </h3>
                 <form method="POST" enctype="multipart/form-data" action=" <?php htmlspecialchars($_SERVER['PHP_SELF']) ?>"> 
                
                    <!-- ho ten -->
                     <div class="form-group">
                         <label> Họ tên: </label>
-                        <input type="text" name="fullname" id="fullname"><?php echo $fullname_txt; ?>
+                        <input type="text" name="fullname" id="fullname"  value=" <?php echo $fullname_txt; ?>">  
                         <?php echo $fullname_err; ?>
                     </div>
 
                     <!-- email -->
                     <div class="form-group">
                         <label> Email: </label>
-                        <input type="text" name="email" id="email"><?php echo $email_txt; ?>
+                        <input type="email" name="email" id="email" value="<?php echo $email_txt; ?>">
                         <?php echo $email_err; ?>
                     </div>
 
                     <!-- //mat khau -->
                     <div class="form-group">
                         <label> Password: </label>
-                        <input type="text" name="pass" id="pass"><?php echo $password_txt; ?>
+                        <input type="password" name="pass" id="pass" value="<?php echo $password_txt; ?>">
                         <?php echo $password_err; ?>
                     </div>
 
                     <!-- so dien thoai -->
                     <div class="form-group">
                         <label> Số điện thoại: </label>
-                        <input type="text" name="phone" id="phone"><?php echo $phonenumber_txt; ?>
+                        <input type="text" name="phone" id="phone" value="<?php echo $phonenumber_txt; ?>">
                         <?php echo $phonenumber_err; ?>
                     </div>
 
                     <!-- dia chi -->
                     <div class="form-group">
                         <label> Địa chỉ: </label>
-                        <input type="text" name="address" id="address"><?php echo $address_txt; ?>
+                        <input type="text" name="address" id="address" value="<?php echo $address_txt; ?>">
                         <?php echo $address_err; ?>
                     </div>
 
                     <!-- ngay sinh -->
                     <div class="form-group">
                         <label> Ngày sinh: </label>
-                        <input type="text" name="date" id="date"><?php echo $dateOfBirth_txt; ?>
+                        <input type="date" name="date" id="date" value="<?php echo $dateOfBirth_txt; ?>">
                         <?php echo $dateOfBirth_err; ?>
-                    </div>
-                   
-                   <!-- nhiem vu -->
-                    <div class="form-group">
-                        <label> Nhiệm vụ: </label>
-                        <input type="text" name="missions" id="missions"><?php echo $mission_txt; ?>
-                        <?php echo $mission_err; ?>
-                    </div>
+                    </div>                
 
-                     <!-- check mission -->
-                     <div class="form-group">
-                        <label> Check mission: </label>
-                        <input type="text" name="checkmission" id="checkmission"><?php echo $check_mission_text; ?>
-                        <?php echo $check_mission_err; ?>
+
+                    <!-- check permission -->
+                    <div class="form-group form-check form-check-inline">
+                        <label class="form-check-label" >Check permission :</label>
                     </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="checkmission" <?php if($check_mission_text == "1" ){ echo "checked"; } ?>  value="1"  selected>
+                        <label class="form-check-label" >Admin</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="checkmission" <?php if($check_mission_text == "2" ){ echo "checked"; } ?>  value="2">
+                        <label class="form-check-label" >Nhan vien</label>
+                    </div><br>
 
                    
                     <!-- gioi tinh -->
@@ -235,10 +225,7 @@
 
                 </form>
             </div>
-            <!-- ckeditor function call -->
-            <!-- <script>
-                CKEDITOR.replace('detail');
-            </script> -->
+           
         </div>
     </div>
 </div>

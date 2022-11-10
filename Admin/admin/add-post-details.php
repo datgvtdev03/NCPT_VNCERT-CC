@@ -9,13 +9,16 @@
 
 
     //khai bao bien
-    $fullname_err = $email_err = $password_err = $phonenumber_err = $address_err = $mission_err = $gender_err = $dateOfBirth_err = $check_mission_err;
-    $fullname_txt = $email_txt = $password_txt = $phonenumber_txt = $address_txt = $mission_txt = $gender_txt = $dateOfBirth_txt = $check_mission_text;
+    $fullname_err = $email_err = $password_err = $phonenumber_err = $address_err = $gender_err = $dateOfBirth_err = $check_mission_err;
+    $fullname_txt = $email_txt = $password_txt = $phonenumber_txt = $address_txt = $gender_txt = $dateOfBirth_txt = $check_mission_text;
     $t = 1;
 
 
 
     if( $_SERVER["REQUEST_METHOD"] == "POST" ){
+
+
+    
         
         //check fullname
         if( empty($_REQUEST["fullname"])){
@@ -26,14 +29,14 @@
 
         //check email
         if( empty( $_REQUEST["email"] ) ){
-            $email_err = "<p style='color:red'> * Email không được để trông </p>";
+            $email_err = "<p style='color:red'> * Email không được để trống </p>";
         }else{
            $email_txt = $_REQUEST["email"];
         }
 
         //check pass
         if( empty( $_REQUEST["pass"] ) ){
-            $password_err = "<p style='color:red'> * Email không được để trông </p>";
+            $password_err = "<p style='color:red'> * Email không được để trống </p>";
         }else{
            $password_txt = $_REQUEST["pass"];
         }
@@ -59,16 +62,11 @@
             $dateOfBirth_txt = $_REQUEST["date"];
         }
 
-        //check nhiem vu 
-        if( empty( $_REQUEST["missions"])) {
-            $mission_err = "<p style='color:red'> * Nhiệm vụ không được để trống! </p>";
-        } else {
-            $mission_txt = $_REQUEST["missions"];
-        }
 
         //check mission
         if( empty( $_REQUEST["checkmission"])) {
-            $check_mission_err = "<p style='color:red'> * Nhiệm vụ không được để trống! </p>";
+            // $check_mission_err = "<p style='color:red'> * Nhiệm vụ không được để trống! </p>";
+            $check_mission_text = "";
         } else {
             $check_mission_text = $_REQUEST["checkmission"];
         }
@@ -85,21 +83,28 @@
 
 
         //ktra rong
-        if( !empty($fullname_txt) && !empty($email_txt) && !empty($password_txt) && !empty($address_txt) && !empty($phonenumber_txt) && !empty($dateOfBirth_txt) && !empty($mission_txt) && !empty($check_mission_text)) {
+        if( !empty($fullname_txt) && !empty($email_txt) && !empty($password_txt) && !empty($address_txt) && !empty($phonenumber_txt) && !empty($dateOfBirth_txt) && !empty($check_mission_text)) {
 
             $current_time  = strtotime("now");
 
             $sql_select_query = "SELECT email FROM admin WHERE email = '$email_txt' ";
             $r = mysqli_query($conn , $sql_select_query);
 
+
+
+
             if(mysqli_num_rows($r) > 0) {
                 $email_err = "<p style='color:red'> * Email đã tồn tại! </p>";
             } else {
-                $add_member = "INSERT INTO admin( name ,email,  password , gender, phoneNumber, address, mission, dateOfBirth, checkMission, p_time) 
-                VALUES ( '$fullname_txt' , '$email_txt', '$password_txt' , '$gender_txt', '$phonenumber_txt', '$address_txt', '$mission_txt' , '$dateOfBirth_txt', '$check_mission_text', '$current_time')";
+               
+                // $add_member = "INSERT INTO admin( name ,email,  password , gender, phoneNumber, address, dateOfBirth, checkMission, p_time) 
+                // VALUES ( '$fullname_txt' , '$email_txt', '$password_txt' , '$gender_txt', '$phonenumber_txt', '$address_txt', '$dateOfBirth_txt', '$check_mission_text', '$current_time')";
+
+                $add_member = "INSERT INTO admin( name ,email,  password , gender, phoneNumber, address, dateOfBirth, checkMission, p_time) 
+                VALUES ( '$fullname_txt' , '$email_txt', MD5( '".$password_txt."' ), '$gender_txt', '$phonenumber_txt', '$address_txt', '$dateOfBirth_txt', '$check_mission_text', '$current_time')";
 
                 $result_add_member = mysqli_query($conn , $add_member);
-                
+               
             }
 
 
@@ -125,8 +130,6 @@
     }
 ?>
 
-<!-- ckeditor js -->
-<!-- <script src="include/ckeditor/ckeditor.js"></script> -->
 
 <div class="container mb-5">
     <div id="form" class="pt-5 form-input-content">
@@ -138,58 +141,58 @@
                    <!-- ho ten -->
                     <div class="form-group">
                         <label> Họ tên: </label>
-                        <input type="text" name="fullname" id="fullname"><?php echo $fullname_txt; ?>
+                        <input type="text" name="fullname" id="fullname">
                         <?php echo $fullname_err; ?>
                     </div>
+
 
                     <!-- email -->
                     <div class="form-group">
                         <label> Email: </label>
-                        <input type="text" name="email" id="email"><?php echo $email_txt; ?>
+                        <input type="email" name="email" id="email">
                         <?php echo $email_err; ?>
                     </div>
 
                     <!-- //mat khau -->
                     <div class="form-group">
                         <label> Password: </label>
-                        <input type="text" name="pass" id="pass"><?php echo $password_txt; ?>
+                        <input type="password" name="pass" id="pass">
                         <?php echo $password_err; ?>
                     </div>
 
                     <!-- so dien thoai -->
                     <div class="form-group">
                         <label> Số điện thoại: </label>
-                        <input type="text" name="phone" id="phone"><?php echo $phonenumber_txt; ?>
+                        <input type="text" name="phone" id="phone" >
                         <?php echo $phonenumber_err; ?>
                     </div>
 
                     <!-- dia chi -->
                     <div class="form-group">
                         <label> Địa chỉ: </label>
-                        <input type="text" name="address" id="address"><?php echo $address_txt; ?>
+                        <input type="text" name="address" id="address" >
                         <?php echo $address_err; ?>
                     </div>
 
                     <!-- ngay sinh -->
                     <div class="form-group">
                         <label> Ngày sinh: </label>
-                        <input type="text" name="date" id="date"><?php echo $dateOfBirth_txt; ?>
+                        <input type="date" name="date" id="date">
                         <?php echo $dateOfBirth_err; ?>
-                    </div>
-                   
-                   <!-- nhiem vu -->
-                    <div class="form-group">
-                        <label> Nhiệm vụ: </label>
-                        <input type="text" name="missions" id="missions"><?php echo $mission_txt; ?>
-                        <?php echo $mission_err; ?>
                     </div>
 
                      <!-- check mission -->
-                     <div class="form-group">
-                        <label> Check position: </label>
-                        <input type="text" name="checkmission" id="checkmission"><?php echo $check_mission_text; ?>
-                        <?php echo $check_mission_err; ?>
+                     <div class="form-group form-check form-check-inline">
+                        <label class="form-check-label" >Check permission :</label>
                     </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="checkmission" <?php if($check_mission_text == "1" ){ echo "checked"; } ?>  value="1"  selected>
+                        <label class="form-check-label" >Admin</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="checkmission" <?php if($check_mission_text == "2" ){ echo "checked"; } ?>  value="2">
+                        <label class="form-check-label" >Nhân viên</label>
+                    </div><br>
 
                    
                     <!-- gioi tinh -->
