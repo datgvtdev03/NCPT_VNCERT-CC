@@ -91,7 +91,7 @@
 
 
                     <li>
-                        <a href="#">
+                        <a href="./manager-mission.php">
                             <i class="icon-list menu-icon"></i><span class="nav-text">Nhiệm vụ</span>
                         </a>
                     </li>

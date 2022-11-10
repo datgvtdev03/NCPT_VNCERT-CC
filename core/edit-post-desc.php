@@ -81,6 +81,7 @@
                  ";
                 }
             } else {
+                $current_time  = strtotime("now");
                 $update_post_description = "UPDATE post_description SET p_heading = '$p_heading' , p_description = '' , p_category = '$category', complete_post = '$editor', p_time = '$current_time' WHERE p_id = '$id' ";
                 $result_update_desc = mysqli_query($conn , $update_post_description);
     
