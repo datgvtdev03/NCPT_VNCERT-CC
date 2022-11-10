@@ -44,7 +44,7 @@ table {
             $p_thumbnail = $rows["p_thumbnail"];
             $p_id = $rows["p_id"];
           
-            echo "<script>console.log('Debug Objects: " . $complete_post . "' );</script>";
+            // echo "<script>console.log('Debug Objects: " . $complete_post . "' );</script>";
             
             ?>
     <tr>

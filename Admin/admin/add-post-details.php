@@ -11,14 +11,14 @@
     //khai bao bien
     $fullname_err = $email_err = $password_err = $phonenumber_err = $address_err = $gender_err = $dateOfBirth_err = $check_mission_err;
     $fullname_txt = $email_txt = $password_txt = $phonenumber_txt = $address_txt = $gender_txt = $dateOfBirth_txt = $check_mission_text;
-    $t = 1;
+    // $t = 1;
 
 
 
     if( $_SERVER["REQUEST_METHOD"] == "POST" ){
 
 
-    
+    print_r($fullname_txt);
         
         //check fullname
         if( empty($_REQUEST["fullname"])){
@@ -65,7 +65,6 @@
 
         //check mission
         if( empty( $_REQUEST["checkmission"])) {
-            // $check_mission_err = "<p style='color:red'> * Nhiệm vụ không được để trống! </p>";
             $check_mission_text = "";
         } else {
             $check_mission_text = $_REQUEST["checkmission"];
@@ -97,11 +96,9 @@
                 $email_err = "<p style='color:red'> * Email đã tồn tại! </p>";
             } else {
                
-                // $add_member = "INSERT INTO admin( name ,email,  password , gender, phoneNumber, address, dateOfBirth, checkMission, p_time) 
-                // VALUES ( '$fullname_txt' , '$email_txt', '$password_txt' , '$gender_txt', '$phonenumber_txt', '$address_txt', '$dateOfBirth_txt', '$check_mission_text', '$current_time')";
-
                 $add_member = "INSERT INTO admin( name ,email,  password , gender, phoneNumber, address, dateOfBirth, checkMission, p_time) 
-                VALUES ( '$fullname_txt' , '$email_txt', MD5( '".$password_txt."' ), '$gender_txt', '$phonenumber_txt', '$address_txt', '$dateOfBirth_txt', '$check_mission_text', '$current_time')";
+                VALUES ( '$fullname_txt' , '$email_txt', '$password_txt' , '$gender_txt', '$phonenumber_txt', '$address_txt', '$dateOfBirth_txt', '$check_mission_text', '$current_time')";
+
 
                 $result_add_member = mysqli_query($conn , $add_member);
                
@@ -113,7 +110,7 @@
                 $(document).ready( function(){
                     $('#showModal').modal('show');
                     $('#linkBtn').attr('href', 'manage-post-details.php');
-                    $('#linkBtn').text('Xem tất cả chi tiết bài đăng');
+                    $('#linkBtn').text('Xem tất cả chi tiết nhân viên');
                     $('#addMsg').text('Chi tiết bài đăng đã được chỉnh sửa thành công!');
                     $('#closeBtn').text('Chỉnh sửa lại');
                 })
