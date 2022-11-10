@@ -97,7 +97,7 @@
             } else {
                
                 $add_member = "INSERT INTO admin( name ,email,  password , gender, phoneNumber, address, dateOfBirth, checkMission, p_time) 
-                VALUES ( '$fullname_txt' , '$email_txt', '$password_txt' , '$gender_txt', '$phonenumber_txt', '$address_txt', '$dateOfBirth_txt', '$check_mission_text', '$current_time')";
+                VALUES ( '$fullname_txt' , '$email_txt', MD5( '.$password_txt.' ), '$gender_txt', '$phonenumber_txt', '$address_txt', '$dateOfBirth_txt', '$check_mission_text', '$current_time')";
 
 
                 $result_add_member = mysqli_query($conn , $add_member);

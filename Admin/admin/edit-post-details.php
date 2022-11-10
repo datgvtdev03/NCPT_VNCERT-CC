@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $r = mysqli_query($conn, $sql_select_query);
 
 
-        $update_member = "UPDATE admin SET name = '$fullname_txt', email = '$email_txt', password = $password_txt, gender = '$gender_txt', phoneNumber = '$phonenumber_txt', address = '$address_txt', dateOfBirth = '$dateOfBirth_txt', checkMission = '$check_mission_text', p_time = '$current_time' WHERE id = '$id' ";
+        $update_member = "UPDATE admin SET name = '$fullname_txt', email = '$email_txt', password = MD5('.$password_txt.') , gender = '$gender_txt', phoneNumber = '$phonenumber_txt', address = '$address_txt', dateOfBirth = '$dateOfBirth_txt', checkMission = '$check_mission_text', p_time = '$current_time' WHERE id = '$id' ";
 
         $result_add_member = mysqli_query($conn, $update_member);
 

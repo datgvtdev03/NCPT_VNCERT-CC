@@ -53,8 +53,15 @@
 
           // database connection
           require_once "include/connection.php";
+          
+          $mypassword = md5($pass);
+          echo "MD5: $mypassword)";
 
-          $sql_query = "SELECT * FROM admin WHERE email='$email' && password = '$pass'  ";
+          $sql_query = "SELECT * FROM admin WHERE email='$email' && password = '$mypassword'";
+
+        
+
+          
           $result = mysqli_query($conn , $sql_query);
 
           if ( mysqli_num_rows($result) > 0 ){
