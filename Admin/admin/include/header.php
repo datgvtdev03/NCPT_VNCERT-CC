@@ -60,7 +60,7 @@
         <div class="nav-header">
 
              <div class="brand-logo">
-             <!-- <div>VNCERT</div>  -->
+             <div>VNCERT</div> 
                 <a >
                     <span class="brand-title">
                         
