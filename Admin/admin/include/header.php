@@ -84,7 +84,7 @@
                     </div>
                 </div>
                <div class="text-center">
-                <h2 class="pt-3"> VNCERT </h2>
+                <h2 class="pt-3"></h2>
                  </div>
                 
             </div>

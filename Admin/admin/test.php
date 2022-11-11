@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $(document).ready( function(){
                     $('#showModal').modal('show');
                     $('#linkBtn').attr('href', 'manage-mission-staff.php');
-                    $('#linkBtn').text('Xem tất cả chi tiết bài đăng');
+                    $('#linkBtn').text('Xem tất cả chi tiết nhiệm vụ');
                     $('#addMsg').text('Chi tiết bài đăng đã được chỉnh sửa thành công!');
                     $('#closeBtn').text('Chỉnh sửa lại');
                 })
