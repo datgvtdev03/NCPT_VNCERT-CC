@@ -41,6 +41,7 @@ $i = 1;
                 <th>Thời gian thực hiện</th>
                 <th>Thời gian kết thúc</th>
                 <th>Trạng thái</th>
+                <th>Tình trạng</th>
                 <th>Hoàn thành</th>
             </tr>
             <?php
@@ -91,7 +92,7 @@ $i = 1;
 
                         </td>
 
-
+                        <td></td>
                         <td>
 
 
